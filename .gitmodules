@@ -1,0 +1,3 @@
+[submodule "themes/shapez-theme"]
+	path = themes/shapez-theme
+	url = https://github.com/djuelg/Shapez-Theme
