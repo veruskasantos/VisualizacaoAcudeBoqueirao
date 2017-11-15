@@ -1,8 +1,16 @@
 ---
-title: "Primeiro Post"
+title: "Quando o Açude estiver cheio se prepare..."
 date: 2017-11-14T21:14:36-03:00
 draft: false
 ---
+
+<div id="text" width=300></div>
+
+... não para ir comemorar na "sangria", mas o período de seca que vem em seguida.
+Dê uma olhada no gráfico nos períodos em que o açude atingiu o seu volume máximo: 1995, 2004, 2009, 2011.
+Perceba que, em um curto período de tempo, aproximadamente 1 ano, o volume do açude cai bruscamente.
+Péssima administração das águas é um fator gravíssimo sim, mas o primeiro responsável por esta desagradável situação são os consumidores.
+A consciência do uso moderado da água de toda a população, incluindo indústria e agricultores, dispensaria qualquer administração e períodos de falta de água. 
 
 <div id="vis" width=300></div>
 
@@ -12,66 +20,214 @@ draft: false
 
 <script>
     const spec = {
-     "width": 900,
+    "$schema": "https://vega.github.io/schema/vega/v3.0.json",
+  "autosize": "pad",
+  "padding": 5,
+  "width": 900,
   "height": 450,
-  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "title": "Situação do Açude de Boqueirão",
-  "data": {
-    "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
-    "format": {
-      "type": "json",
-      "property": "volumes",
-      "parse": {
-        "DataInformacao": "utc:'%d/%m/%Y'"
-      }
-    }
+  "title": {
+    "text": "Volume Máximo e Mínimo do Açude de Boqueirão, por ano"
   },
-  "mark": {
-    "type": "area",
-    "interpolate": "monotone"
-  },
-  "encoding": {
-    "x": {
-      "timeUnit": "yearmonthdate",
-      "field": "DataInformacao",
-      "type": "temporal",
-      "axis": {
-        "title": ""
-      }
-    },
-    "y": {
-      "field": "VolumePercentual",
-      "type": "quantitative",
-      "axis": {
-        "title": "Volume (%)"
-      }
-    },
-
-    "color": {"field": "DataInformacao", "type": "temporal"}
-  },
-  "transform": [
+  "style": "cell",
+  "data": [
     {
-      "filter": {
-        "timeUnit": "year",
-        "field": "DataInformacao",
-        "range": [
-          2017,
-          2017
-        ]
+      "name": "source_0",
+      "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
+      "format": {
+        "type": "json",
+        "property": "volumes",
+        "parse": {"DataInformacao": "utc:'%d/%m/%Y'"}
       }
     },
     {
-      "filter": {
-        "timeUnit": "month",
-        "field": "DataInformacao",
-        "range": [
-          1,
-          11
-        ]
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "toDate(datum[\"DataInformacao\"])",
+          "as": "DataInformacao"
+        },
+        {
+          "type": "formula",
+          "expr": "toNumber(datum[\"VolumePercentual\"])",
+          "as": "VolumePercentual"
+        },
+        {
+          "type": "formula",
+          "as": "year_DataInformacao",
+          "expr": "datetime(year(datum[\"DataInformacao\"]), 0, 1, 0, 0, 0, 0)"
+        },
+        {
+          "type": "aggregate",
+          "groupby": ["year_DataInformacao"],
+          "ops": ["max"],
+          "fields": ["VolumePercentual"],
+          "as": ["max_VolumePercentual"]
+        },
+        {
+          "type": "filter",
+          "expr": "datum[\"year_DataInformacao\"] !== null && !isNaN(datum[\"year_DataInformacao\"])"
+        }
+      ]
+    },
+    {
+      "name": "data_1",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "toDate(datum[\"DataInformacao\"])",
+          "as": "DataInformacao"
+        },
+        {
+          "type": "formula",
+          "expr": "toNumber(datum[\"VolumePercentual\"])",
+          "as": "VolumePercentual"
+        },
+        {
+          "type": "formula",
+          "as": "year_DataInformacao",
+          "expr": "datetime(year(datum[\"DataInformacao\"]), 0, 1, 0, 0, 0, 0)"
+        },
+        {
+          "type": "aggregate",
+          "groupby": ["year_DataInformacao"],
+          "ops": ["min"],
+          "fields": ["VolumePercentual"],
+          "as": ["min_VolumePercentual"]
+        },
+        {
+          "type": "filter",
+          "expr": "datum[\"year_DataInformacao\"] !== null && !isNaN(datum[\"year_DataInformacao\"])"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_marks",
+      "type": "area",
+      "style": ["area"],
+      "sort": {
+        "field": "datum[\"year_DataInformacao\"]",
+        "order": "descending"
+      },
+      "from": {"data": "data_0"},
+      "encode": {
+        "update": {
+          "interpolate": {"value": "monotone"},
+          "orient": {"value": "vertical"},
+          "x": {"scale": "x","field": "year_DataInformacao"},
+          "y": {"scale": "y","field": "max_VolumePercentual"},
+          "y2": {"scale": "y","value": 0},
+          "fill": {"value": "#192E5B"}
+        }
+      }
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "area",
+      "style": ["area"],
+      "sort": {
+        "field": "datum[\"year_DataInformacao\"]",
+        "order": "descending"
+      },
+      "from": {"data": "data_1"},
+      "encode": {
+        "update": {
+          "interpolate": {"value": "monotone"},
+          "orient": {"value": "vertical"},
+          "x": {"scale": "x","field": "year_DataInformacao"},
+          "y": {"scale": "y","field": "min_VolumePercentual"},
+          "y2": {"scale": "y","value": 0},
+          "fill": {"value": "#72A2C0"}
+        }
       }
     }
-  ]
-     };
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "time",
+      "domain": {
+        "fields": [
+          {"data": "data_0","field": "year_DataInformacao"},
+          {"data": "data_1","field": "year_DataInformacao"}
+        ],
+        "sort": true
+      },
+      "range": [0,{"signal": "width"}]
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": {
+        "fields": [
+          {"data": "data_0","field": "max_VolumePercentual"},
+          {"data": "data_1","field": "min_VolumePercentual"}
+        ],
+        "sort": true
+      },
+      "range": [{"signal": "height"},0],
+      "nice": true,
+      "zero": true
+    }
+  ],
+  "axes": [
+    {
+      "title": "",
+      "scale": "x",
+      "orient": "bottom",
+      "labelFlush": true,
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "zindex": 1,
+      "encode": {
+        "labels": {
+          "update": {
+            "text": {"signal": "timeFormat(datum.value, '%Y')"}
+          }
+        }
+      }
+    },
+    {
+      "scale": "x",
+      "orient": "bottom",
+      "domain": false,
+      "grid": true,
+      "labels": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "tickCount": {"signal": "ceil(width/40)"},
+      "ticks": false,
+      "zindex": 0,
+      "gridScale": "y"
+    },
+    {
+      "title": "Volume (%)",
+      "scale": "y",
+      "orient": "left",
+      "labelOverlap": true,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "zindex": 1
+    },
+    {
+      "scale": "y",
+      "orient": "left",
+      "domain": false,
+      "grid": true,
+      "labels": false,
+      "maxExtent": 0,
+      "minExtent": 0,
+      "tickCount": {"signal": "ceil(height/40)"},
+      "ticks": false,
+      "zindex": 0,
+      "gridScale": "x"
+    }
+  ],
+  "config": {"axisY": {"minExtent": 30}}
+};
   	vegaEmbed('#vis', spec).catch(console.warn);
 </script>
 
