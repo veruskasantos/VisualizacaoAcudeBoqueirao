@@ -183,7 +183,7 @@
                             <a href="http://0.0.0.0/post/primeiro-post/"><h3>Primeiro Post</h3></a>
                         <div class="timeline-post-description">
                             <p>
-                                const spec = { "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data": { "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento", "format": { "type": "json", "property": "volumes", "parse": { "DataInformacao": "utc:'%d/%m/%Y'" } } }, "width": 500, "height": 120, "mark": { "type": "area", "interpolate": "monotone" }, "selection": { "brush": {"type": "interval", "encodings": ["x"]} }, "encoding": { "x": { "timeUnit" : "monthyear", "field": "DataInformacao", "type": "temporal", "axis": {"format": "%Y", "title" : "Volume percentual ao longo dos anos"} }, "
+                                const spec = { "width": 900, "height": 450, "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "title": "Situação do Açude de Boqueirão", "data": { "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento", "format": { "type": "json", "property": "volumes", "parse": { "DataInformacao": "utc:'%d/%m/%Y'" } } }, "mark": { "type": "area", "interpolate": "monotone" }, "encoding": { "x": { "timeUnit": "yearmonthdate", "field": "DataInformacao", "type": "temporal", "axis": { "title": "" } }, "y": { "field": "VolumePercentual", "type": "quantitative", "axis": { "title": "
                             </p>
                             <a href="http://0.0.0.0/post/primeiro-post/"><p class="timeline-post-read-more"><a href="http://0.0.0.0/post/primeiro-post/">Read more &rarr;</a></p>
                         </div> 
