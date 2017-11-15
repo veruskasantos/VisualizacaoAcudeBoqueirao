@@ -3,29 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://0.0.0.0/post/primeiro-post/</loc>
+    <loc>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/primeiro-post/</loc>
     <lastmod>2017-11-14T21:14:36-03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://0.0.0.0/categories/</loc>
+    <loc>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://0.0.0.0/post/</loc>
-    <lastmod>2017-11-14T21:14:36-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://0.0.0.0/</loc>
+    <loc>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/</loc>
     <lastmod>2017-11-14T21:14:36-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://0.0.0.0/tags/</loc>
+    <loc>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/</loc>
+    <lastmod>2017-11-14T21:14:36-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/tags/</loc>
     <priority>0</priority>
   </url>
   

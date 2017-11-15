@@ -1,7 +1,7 @@
 # Creator: djuelg @ https://github.com/djuelg
 # Run via: hugo server --theme=Shapez-Theme --buildDrafts --bind="0.0.0.0"
 
-baseurl = "http://0.0.0.0/"
+baseurl = "https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/"
 title = "Shapez Theme"
 theme = "Shapez-Theme"
 publishDir = "docs"
