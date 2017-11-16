@@ -16,7 +16,7 @@ googleAnalytics = ""
 
 [params]
     
-    description = "This is the sites description, which will be found in the meta tags."
+    description = "Quando o açude estiver cheio, se prepare..."
 
     # Homepage Start-Screen, variables can be left empty, links dont start with /
     title_l1 = "Açude Epitácio Pessoa"

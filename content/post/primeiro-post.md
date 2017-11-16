@@ -6,7 +6,7 @@ draft: false
 
 <div id="text" width=300></div>
 
-... não para ir comemorar na "sangria", mas para o período de seca no açude que vem  logo em seguida.
+... não para ir comemorar na "sangria", mas para o período de seca no açude que vem logo em seguida.
 Dê uma olhada no gráfico abaixo nos períodos em que o açude atingiu o seu volume máximo: 1995, 2004, 2008, 2012.
 Perceba que, após um curto período de tempo, cerca de 2 anos, o volume do açude começa a cair bruscamente.
 Péssima administração das águas é um fator gravíssimo sim, mas o primeiro responsável por esta desagradável situação são os consumidores.
