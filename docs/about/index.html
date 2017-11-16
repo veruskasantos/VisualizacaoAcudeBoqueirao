@@ -6,12 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Volume do Açude de Boqueirão vem crescendo. -  - Açude Epitácio Pessoa</title>
+<title>About -  - Açude Epitácio Pessoa</title>
 <meta name="author" content="">
 <meta name="description" content=" - This is the sites description, which will be found in the meta tags.">
 <meta name="keywords" content="">
 
-<meta property="og:title" content="Volume do Açude de Boqueirão vem crescendo. -  - Açude Epitácio Pessoa">
+<meta property="og:title" content="About -  - Açude Epitácio Pessoa">
 <meta property="og:description" content=" - This is the sites description, which will be found in the meta tags.">
 
 <!-- Site Icon -->
@@ -37,8 +37,8 @@
     			<a href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/terceiro-post/">Playground</a>
     			<a href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/about/" rel="me">About</a>
                 <text>·</text>              
-                    <a href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/segundo-post/"
-                        >Prev</a>        
+                    <a href="javascript:void(0);"
+                         style="color: gray !important; cursor: not-allowed;" >Prev</a>        
                     <a href="javascript:void(0);"
                          style="color: gray !important; cursor: not-allowed;" >Next</a>             
         	</div>
@@ -116,10 +116,10 @@
       <path d="M62.16 0c6.7 0 10.05 4.57 10.05 9.8 0 6.5-5.8 12.54-13.4 12.54-6.33 0-10.03-3.75-9.85-9.94 0-5.22 4.4-12.4 13.2-12.4zM41.54 100c-5.28 0-9.16-3.26-5.46-17.6l6.07-25.47c1.06-4.08 1.23-5.7 0-5.7-1.6 0-8.45 2.8-12.5 5.58L27 52.4C39.86 41.5 54.66 35.08 61 35.08c5.3 0 6.17 6.36 3.53 16.15l-6.95 26.76c-1.23 4.73-.7 6.36.53 6.36 1.6 0 6.8-1.96 11.9-6.04l3 4.08C60.5 95.1 46.83 100 41.54 100z" transform="matrix(1.087 0 0 1.2 178.888 205.7)" filter="url(#f)"/>
     </a>
 
-    <a class="side-nav" xlink:title="Previous Article" xlink:href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/segundo-post/">
+    <a class="side-nav" xlink:title="Previous Article" xlink:href="javascript:void(0);">
       <circle cx="185" cy="550" r="40" fill="transparent" />
       <path d="M1149 1784c-233-240-425-440-427-444-1-4 55-62 125-130s269-261 442-429l314-306 137 143 137 143-191 187c-105 103-240 234-299 292l-108 105 291 300 290 299-137 138c-76 76-140 138-143 138s-197-196-431-436z" transform="matrix(.056 0 0 -.057 112.114 626.942)" filter="url(#c)"
-      />
+       fill="#4CABAB" style="cursor: not-allowed;" />
     </a>
     
     <a class="side-nav" xlink:title="Next Article" xlink:href="javascript:void(0);">
@@ -139,13 +139,13 @@
                     <div class="publish-date" style="margin-top: 10px;">
                         <h3>15</h3></br>NOVEMBER
                     </div>
-                    <h1>Volume do Açude de Boqueirão vem crescendo.</h1>
+                    <h1>About</h1>
                 </div>
         	</div>
             <div class="article-meta-inf">
                 <a href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/about/" rel="me">by  </a>
                 <text> &nbsp; · &nbsp; 2017-11-15</text>
-                <text> &nbsp; · &nbsp; 3 minutes reading time</text>
+                <text> &nbsp; · &nbsp; 1 minutes reading time</text>
                 <a href="javascript:void(0);"><svg id="alignLeft"
 	 xmlns="http://www.w3.org/2000/svg" 
 	 version="1.1" 
@@ -182,232 +182,11 @@
 </a>
             </div>
         	<div id="article-body">
-        			<div id="text" width=300></div>
-O açude de Boqueirão, no Agreste da Paraíba, atingiu o seu volume morto em 18 de junho de 2016 ao atingir a marca de 8,22%, segundo o G1.
-Após décadas de espera, a transposição das águas do Rio São Franscisco chegou finalmente ao açude em abril de 2017, trazendo esperança aos que dele dependem.
-Lentamente o volume do açude está subindo, porém em alguns períodos, como final de agosto, a vazão de saída é maior que a vazão de entrada da água.
-Hoje, o açude atinge a marca de 9,3% da sua capacidade, o que corresponde a 38.150.000 m³ de água, segundo os dados da AESA.
-Acompanhe a situação do volume no gráfico abaixo, desde janeiro deste ano.
-Faça sua parte, não desperdice água!
+        			<p>Análises sobre o Açude Epitácio Pessoa (Boqueirão), com os dados disponibilizados pelo INSA.</p>
 
-<div id="vis" width=300></div>
+<p>Disciplina Visualização da Informação - 2017.2</p>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
-
-<script>
-    const spec = {
-  "$schema": "https://vega.github.io/schema/vega/v3.0.json",
-  "autosize": "pad",
-  "padding": 5,
-  "width": 900,
-  "height": 450,
-  "title": {"text": "Situação do Açude de Boqueirão em 2017"},
-  "style": "cell",
-  "data": [
-    {
-      "name": "source_0",
-      "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
-      "format": {
-        "type": "json",
-        "property": "volumes",
-        "parse": {
-          "DataInformacao": "utc:'%d/%m/%Y'",
-          "VolumePercentual": "number"
-        }
-      },
-      "transform": [
-        {
-          "type": "filter",
-          "expr": "inrange(time(datetime(year(datum[\"DataInformacao\"]), 0, 1, 0, 0, 0, 0)), [time(datetime(2017, 0, 1, 0, 0, 0, 0)), time(datetime(2017, 0, 1, 0, 0, 0, 0))])"
-        },
-        {
-          "type": "filter",
-          "expr": "inrange(time(datetime(0, month(datum[\"DataInformacao\"]), 1, 0, 0, 0, 0)), [time(datetime(0, 0, 1, 0, 0, 0, 0)), time(datetime(0, 10, 1, 0, 0, 0, 0))])"
-        },
-        {
-          "type": "formula",
-          "as": "yearmonthdate_DataInformacao",
-          "expr": "datetime(year(datum[\"DataInformacao\"]), month(datum[\"DataInformacao\"]), date(datum[\"DataInformacao\"]), 0, 0, 0, 0)"
-        },
-        {
-          "type": "impute",
-          "field": "VolumePercentual",
-          "groupby": ["DataInformacao"],
-          "key": "yearmonthdate_DataInformacao",
-          "method": "value",
-          "value": 0
-        },
-        {
-          "type": "stack",
-          "groupby": ["yearmonthdate_DataInformacao"],
-          "field": "VolumePercentual",
-          "sort": {
-            "field": ["DataInformacao"],
-            "order": ["descending"]
-          },
-          "as": ["VolumePercentual_start","VolumePercentual_end"],
-          "offset": "zero"
-        },
-        {
-          "type": "filter",
-          "expr": "datum[\"DataInformacao\"] !== null && !isNaN(datum[\"DataInformacao\"]) && datum[\"VolumePercentual\"] !== null && !isNaN(datum[\"VolumePercentual\"])"
-        }
-      ]
-    }
-  ],
-  "marks": [
-    {
-      "name": "pathgroup",
-      "type": "group",
-      "from": {
-        "facet": {
-          "name": "faceted_path_main",
-          "data": "source_0",
-          "groupby": ["DataInformacao"]
-        }
-      },
-      "encode": {
-        "update": {
-          "width": {"field": {"group": "width"}},
-          "height": {"field": {"group": "height"}}
-        }
-      },
-      "marks": [
-        {
-          "name": "marks",
-          "type": "area",
-          "style": ["area"],
-          "sort": {
-            "field": "datum[\"yearmonthdate_DataInformacao\"]",
-            "order": "descending"
-          },
-          "from": {"data": "faceted_path_main"},
-          "encode": {
-            "update": {
-              "interpolate": {"value": "monotone"},
-              "orient": {"value": "vertical"},
-              "x": {
-                "scale": "x",
-                "field": "yearmonthdate_DataInformacao"
-              },
-              "y": {"scale": "y","field": "VolumePercentual_end"},
-              "y2": {
-                "scale": "y",
-                "field": "VolumePercentual_start"
-              },
-              "fill": {"scale": "color","field": "DataInformacao"}
-            }
-          }
-        }
-      ]
-    }
-  ],
-  "scales": [
-    {
-      "name": "x",
-      "type": "time",
-      "domain": {
-        "data": "source_0",
-        "field": "yearmonthdate_DataInformacao"
-      },
-      "range": [0,{"signal": "width"}]
-    },
-    {
-      "name": "y",
-      "type": "linear",
-      "domain": {
-        "data": "source_0",
-        "fields": ["VolumePercentual_start","VolumePercentual_end"],
-        "sort": true
-      },
-      "range": [{"signal": "height"},0],
-      "nice": true,
-      "zero": true
-    },
-    {
-      "name": "color",
-      "type": "sequential",
-      "domain": {"data": "source_0","field": "DataInformacao"},
-      "range": "ramp",
-      "nice": false,
-      "zero": false
-    }
-  ],
-  "axes": [
-    {
-      "title": "",
-      "scale": "x",
-      "orient": "bottom",
-      "labelFlush": true,
-      "labelOverlap": true,
-      "tickCount": {"signal": "ceil(width/40)"},
-      "zindex": 1,
-      "encode": {
-        "labels": {
-          "update": {
-            "text": {
-              "signal": "timeFormat(datum.value, '%b %d, %Y')"
-            }
-          }
-        }
-      }
-    },
-    {
-      "scale": "x",
-      "orient": "bottom",
-      "domain": false,
-      "grid": true,
-      "labels": false,
-      "maxExtent": 0,
-      "minExtent": 0,
-      "tickCount": {"signal": "ceil(width/40)"},
-      "ticks": false,
-      "zindex": 0,
-      "gridScale": "y"
-    },
-    {
-      "title": "Volume (%)",
-      "scale": "y",
-      "orient": "left",
-      "labelOverlap": true,
-      "tickCount": {"signal": "ceil(height/40)"},
-      "zindex": 1
-    },
-    {
-      "scale": "y",
-      "orient": "left",
-      "domain": false,
-      "grid": true,
-      "labels": false,
-      "maxExtent": 0,
-      "minExtent": 0,
-      "tickCount": {"signal": "ceil(height/40)"},
-      "ticks": false,
-      "zindex": 0,
-      "gridScale": "x"
-    }
-  ],
-  "legends": [
-    {
-      "fill": "color",
-      "title": "DataInformacao",
-      "encode": {
-        "labels": {
-          "update": {
-            "text": {
-              "signal": "timeFormat(datum.value, '%b %d, %Y')"
-            }
-          }
-        }
-      }
-    }
-  ],
-  "config": {"axisY": {"minExtent": 30}}
-};
-    vegaEmbed('#vis', spec).catch(console.warn);
-</script>
+<p>Curso de Ciência da Computação - UFCG</p>
 
         	</div>
 

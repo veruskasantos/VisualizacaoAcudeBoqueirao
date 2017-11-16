@@ -5,9 +5,9 @@ baseurl = "https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/"
 title = "Açude Epitácio Pessoa"
 theme = "Shapez-Theme"
 publishDir = "docs"
-copyright = "Copyright (c) 2016, djuelg; all rights reserved."
+copyright = "Copyright (c) 2017, Veruska Santos"
 [author]
-    name = "djuelg"
+    name = ""
     
 languageCode = "en-US"
 MetaDataFormat = "toml"
@@ -15,8 +15,7 @@ PaginatePath = "page"
 googleAnalytics = ""
 
 [params]
-    # Meta Information
-    # name = "djuelg"
+    
     description = "This is the sites description, which will be found in the meta tags."
 
     # Homepage Start-Screen, variables can be left empty, links dont start with /
@@ -25,21 +24,14 @@ googleAnalytics = ""
     subtitle_l1 = "Veja abaixo algumas análises feitas sobre"
     subtitle_l2 = "o volume deste tão importante açude."
     subtitle_l3 = "Dados atualizados pela AESA."
-    # For these Links you need the full URL, because external links are supported
-    # title_link = "http://djuelg.github.io/about/"
     subtitle_link = ""
 
-    # message = "I'm an optional important message!"
-    # Possible values are: auto | optimizeSpeed | optimizeQuality
     start_screen_image_quality = "auto"
 
     # Enter links for the buttons (button one has the house sign), shouldn't be left empty
     button_1 = ""
-    button_2 = "playground/"
+    button_2 = "post/terceiro-post/"
     button_3 = "about/"
 
-    # logo = "images/logo.png"
-    # logo_start_screen_rotation = "19"
-    # This is a workaround to the original paginate param, to apply x articles per page AND sort by date
     paginate = 2
     keywords = "hugo, blog, Shapez, SVG, design"

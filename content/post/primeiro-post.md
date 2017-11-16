@@ -1,16 +1,17 @@
 ---
-title: "Quando o Açude estiver cheio se prepare..."
+title: "Quando o Açude estiver cheio, se prepare..."
 date: 2017-11-14T21:14:36-03:00
 draft: false
 ---
 
 <div id="text" width=300></div>
 
-... não para ir comemorar na "sangria", mas o período de seca que vem em seguida.
-Dê uma olhada no gráfico nos períodos em que o açude atingiu o seu volume máximo: 1995, 2004, 2009, 2011.
-Perceba que, em um curto período de tempo, aproximadamente 1 ano, o volume do açude cai bruscamente.
+... não para ir comemorar na "sangria", mas para o período de seca no açude que vem  logo em seguida.
+Dê uma olhada no gráfico abaixo nos períodos em que o açude atingiu o seu volume máximo: 1995, 2004, 2008, 2012.
+Perceba que, após um curto período de tempo, cerca de 2 anos, o volume do açude começa a cair bruscamente.
 Péssima administração das águas é um fator gravíssimo sim, mas o primeiro responsável por esta desagradável situação são os consumidores.
-A consciência do uso moderado da água de toda a população, incluindo indústria e agricultores, dispensaria qualquer administração e períodos de falta de água. 
+Ver que o açude está cheio tráz uma sensação de conforto e de falta de preocupação em poupar a água. Aliado com a falta de chuvas prolongadas, o volume do açude, então, começa a diminuir rapidamente.
+A consciência do uso moderado da água de toda a população, incluindo indústria e agricultores, não só em períodos de baixo volume, dispensaria qualquer administração e períodos de falta de água. 
 
 <div id="vis" width=300></div>
 

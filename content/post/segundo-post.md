@@ -5,8 +5,10 @@ draft: false
 ---
 
 <div id="text" width=300></div>
-O Maior São João do Mundo não prejudica significativamente o volume das águas do açude, não tão quanto a má administração do mesmo e a própria evaporação, decorrente do clima da caatinga.
-Veja no gráfico que, desde o ano de 1990, em nenhum período alto do São João (junho) o açude atingiu o mínimo do ano.
+Em períodos de racionamento de água na cidade de Campina Grande é comum ver as pessoas preocupadas com a chegada de milhares de turistas no perído junino e consequentemente o aumento no consumo da água.
+Porém, os dados mostram que o açude em nenhum ano no mês junino, desde 1990, atingiu o volume mínimo do ano. Ou seja, o Maior São João do Mundo não prejudica significativamente o volume das águas do açude, não tão quanto a má administração do mesmo e a própria evaporação, influenciada pelo clima do semiárido. Além do mais, algumas medidas são tomadas para diminuir a retirada de água do açude de Boqueirão. Este ano a água utilizada durante todo o período junino no Parque do Povo foi retirada de 3 poços artesianos.
+No gráfico abaixo, as barras indicam o volume mínimo do açude nos meses de junho de cada ano, e a linha exibe o volume mínimo do açude por ano.
+
 
 <div id="vis" width=300></div>
 

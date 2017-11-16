@@ -5,11 +5,22 @@
     <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/</link>
     <description>Recent content on Açude Epitácio Pessoa</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>Copyright (c) 2016, djuelg; all rights reserved.</copyright>
-    <lastBuildDate>Wed, 15 Nov 2017 15:31:06 -0300</lastBuildDate>
+    <copyright>Copyright (c) 2017, Veruska Santos</copyright>
+    <lastBuildDate>Wed, 15 Nov 2017 21:09:53 -0300</lastBuildDate>
     
 	<atom:link href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/about/</link>
+      <pubDate>Wed, 15 Nov 2017 21:09:53 -0300</pubDate>
+      
+      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/about/</guid>
+      <description>Análises sobre o Açude Epitácio Pessoa (Boqueirão), com os dados disponibilizados pelo INSA.
+Disciplina Visualização da Informação - 2017.2
+Curso de Ciência da Computação - UFCG</description>
+    </item>
     
     <item>
       <title>Volume do Açude de Boqueirão vem crescendo.</title>
@@ -17,7 +28,7 @@
       <pubDate>Wed, 15 Nov 2017 15:31:06 -0300</pubDate>
       
       <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/terceiro-post/</guid>
-      <description>Hoje com 9% da capacidade total.      const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega/v3.0.json&#34;, &#34;autosize&#34;: &#34;pad&#34;, &#34;padding&#34;: 5, &#34;width&#34;: 900, &#34;height&#34;: 450, &#34;title&#34;: {&#34;text&#34;: &#34;Situação do Açude de Boqueirão em 2017&#34;}, &#34;style&#34;: &#34;cell&#34;, &#34;data&#34;: [ { &#34;name&#34;: &#34;source_0&#34;, &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34;, &#34;VolumePercentual&#34;: &#34;number&#34; } }, &#34;transform&#34;: [ { &#34;type&#34;: &#34;filter&#34;, &#34;expr&#34;: &#34;inrange(time(datetime(year(datum[\&#34;DataInformacao\&#34;]), 0, 1, 0, 0, 0, 0)), [time(datetime(2017, 0, 1, 0, 0, 0, 0)), time(datetime(2017, 0, 1, 0, 0, 0, 0))])&#34;</description>
+      <description>O açude de Boqueirão, no Agreste da Paraíba, atingiu o seu volume morto em 18 de junho de 2016 ao atingir a marca de 8,22%, segundo o G1. Após décadas de espera, a transposição das águas do Rio São Franscisco chegou finalmente ao açude em abril de 2017, trazendo esperança aos que dele dependem. Lentamente o volume do açude está subindo, porém em alguns períodos, como final de agosto, a vazão de saída é maior que a vazão de entrada da água.</description>
     </item>
     
     <item>
@@ -26,16 +37,16 @@
       <pubDate>Wed, 15 Nov 2017 15:30:59 -0300</pubDate>
       
       <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/segundo-post/</guid>
-      <description>O Maior São João do Mundo não prejudica significativamente o volume das águas do açude, não tão quanto a má administração do mesmo e a própria evaporação, decorrente do clima da caatinga. Veja no gráfico que, desde o ano de 1990, em nenhum período alto do São João (junho) o açude atingiu o mínimo do ano.      const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega/v3.0.json&#34;, &#34;autosize&#34;: &#34;pad&#34;, &#34;</description>
+      <description>Em períodos de racionamento de água na cidade de Campina Grande é comum ver as pessoas preocupadas com a chegada de milhares de turistas no perído junino e consequentemente o aumento no consumo da água. Porém, os dados mostram que o açude em nenhum ano no mês junino, desde 1990, atingiu o volume mínimo do ano. Ou seja, o Maior São João do Mundo não prejudica significativamente o volume das águas do açude, não tão quanto a má administração do mesmo e a própria evaporação, influenciada pelo clima do semiárido.</description>
     </item>
     
     <item>
-      <title>Quando o Açude estiver cheio se prepare...</title>
+      <title>Quando o Açude estiver cheio, se prepare...</title>
       <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/primeiro-post/</link>
       <pubDate>Tue, 14 Nov 2017 21:14:36 -0300</pubDate>
       
       <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/primeiro-post/</guid>
-      <description>&amp;hellip; não para ir comemorar na &amp;ldquo;sangria&amp;rdquo;, mas o período de seca que vem em seguida. Dê uma olhada no gráfico nos períodos em que o açude atingiu o seu volume máximo: 1995, 2004, 2009, 2011. Perceba que, em um curto período de tempo, aproximadamente 1 ano, o volume do açude cai bruscamente. Péssima administração das águas é um fator gravíssimo sim, mas o primeiro responsável por esta desagradável situação são os consumidores.</description>
+      <description>&amp;hellip; não para ir comemorar na &amp;ldquo;sangria&amp;rdquo;, mas para o período de seca no açude que vem logo em seguida. Dê uma olhada no gráfico abaixo nos períodos em que o açude atingiu o seu volume máximo: 1995, 2004, 2008, 2012. Perceba que, após um curto período de tempo, cerca de 2 anos, o volume do açude começa a cair bruscamente. Péssima administração das águas é um fator gravíssimo sim, mas o primeiro responsável por esta desagradável situação são os consumidores.</description>
     </item>
     
   </channel>

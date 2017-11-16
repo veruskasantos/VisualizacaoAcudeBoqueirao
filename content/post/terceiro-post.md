@@ -4,7 +4,12 @@ date: 2017-11-15T15:31:06-03:00
 draft: false
 ---
 <div id="text" width=300></div>
-Hoje com 9% da capacidade total.
+O açude de Boqueirão, no Agreste da Paraíba, atingiu o seu volume morto em 18 de junho de 2016 ao atingir a marca de 8,22%, segundo o G1.
+Após décadas de espera, a transposição das águas do Rio São Franscisco chegou finalmente ao açude em abril de 2017, trazendo esperança aos que dele dependem.
+Lentamente o volume do açude está subindo, porém em alguns períodos, como final de agosto, a vazão de saída é maior que a vazão de entrada da água.
+Hoje, o açude atinge a marca de 9,3% da sua capacidade, o que corresponde a 38.150.000 m³ de água, segundo os dados da AESA.
+Acompanhe a situação do volume no gráfico abaixo, desde janeiro deste ano.
+Faça sua parte, não desperdice água!
 
 <div id="vis" width=300></div>
 
