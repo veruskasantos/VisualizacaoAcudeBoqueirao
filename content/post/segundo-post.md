@@ -1,11 +1,11 @@
 ---
 title: "São João de Campina Grande não é o responsável pela seca do Açude."
-date: 2017-11-15T15:30:59-03:00
+date: 2017-11-14T15:30:59-03:00
 draft: false
 ---
 
 <div id="text" width=300></div>
-Em períodos de racionamento de água na cidade de Campina Grande é comum ver as pessoas preocupadas com a chegada de milhares de turistas no perído junino e consequentemente o aumento no consumo da água.
+Em períodos de racionamento de água na cidade de Campina Grande é comum ver as pessoas preocupadas com a chegada de milhares de turistas no período junino e consequentemente o aumento no consumo da água.
 Porém, os dados mostram que o açude em nenhum ano no mês junino, desde 1990, atingiu o volume mínimo do ano. Ou seja, o Maior São João do Mundo não prejudica significativamente o volume das águas do açude, não tão quanto a má administração do mesmo e a própria evaporação, influenciada pelo clima do semiárido. Além do mais, algumas medidas são tomadas para diminuir a retirada de água do açude de Boqueirão. Este ano a água utilizada durante todo o período junino no Parque do Povo foi retirada de 3 poços artesianos.
 No gráfico abaixo, as barras indicam o volume mínimo do açude nos meses de junho de cada ano, e a linha exibe o volume mínimo do açude por ano.
 
