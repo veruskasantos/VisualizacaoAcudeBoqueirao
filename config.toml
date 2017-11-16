@@ -23,7 +23,7 @@ googleAnalytics = ""
     title_l2 = "Boqueirão"
     subtitle_l1 = "Veja abaixo algumas análises feitas sobre"
     subtitle_l2 = "o volume deste tão importante açude."
-    subtitle_l3 = "Dados atualizados pela AESA."
+    subtitle_l3 = "Dados atualizados pelo INSA."
     subtitle_link = ""
 
     start_screen_image_quality = "auto"
