@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Açude Epitácio Pessoa</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 2017, Veruska Santos</copyright>
-    <lastBuildDate>Wed, 15 Nov 2017 15:31:06 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 29 Nov 2017 20:17:10 -0300</lastBuildDate>
     
 	<atom:link href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Analisando o volume máximo e mínimo do Açude, por mês</title>
+      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/quarto-post/</link>
+      <pubDate>Wed, 29 Nov 2017 20:17:10 -0300</pubDate>
+      
+      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/quarto-post/</guid>
+      <description>.mychart circle { fill: yellow; }
+.mychart circle:hover { fill: lemonchiffon; } .mychart text { font: 12px sans-serif; text-anchor: left; }  
+function desenhaGrafico(dados) { // definicoes de altura e largura do svg e da vis dentro var alturaSVG = 600, larguraSVG = 2000; var margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.</description>
+    </item>
     
     <item>
       <title>Volume do Açude de Boqueirão vem crescendo.</title>
