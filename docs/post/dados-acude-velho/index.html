@@ -6,12 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Analisando o volume máximo e mínimo do Açude, por mês -  - Açude Epitácio Pessoa</title>
+<title>Dados Acude Velho -  - Açude Epitácio Pessoa</title>
 <meta name="author" content="">
 <meta name="description" content=" - Quando o açude estiver cheio, se prepare...">
 <meta name="keywords" content="">
 
-<meta property="og:title" content="Analisando o volume máximo e mínimo do Açude, por mês -  - Açude Epitácio Pessoa">
+<meta property="og:title" content="Dados Acude Velho -  - Açude Epitácio Pessoa">
 <meta property="og:description" content=" - Quando o açude estiver cheio, se prepare...">
 
 <!-- Site Icon -->
@@ -37,7 +37,7 @@
     			<a href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/terceiro-post/">Playground</a>
     			<a href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/about/" rel="me">About</a>
                 <text>·</text>              
-                    <a href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/terceiro-post/"
+                    <a href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/quarto-post/"
                         >Prev</a>        
                     <a href="javascript:void(0);"
                          style="color: gray !important; cursor: not-allowed;" >Next</a>             
@@ -116,7 +116,7 @@
       <path d="M62.16 0c6.7 0 10.05 4.57 10.05 9.8 0 6.5-5.8 12.54-13.4 12.54-6.33 0-10.03-3.75-9.85-9.94 0-5.22 4.4-12.4 13.2-12.4zM41.54 100c-5.28 0-9.16-3.26-5.46-17.6l6.07-25.47c1.06-4.08 1.23-5.7 0-5.7-1.6 0-8.45 2.8-12.5 5.58L27 52.4C39.86 41.5 54.66 35.08 61 35.08c5.3 0 6.17 6.36 3.53 16.15l-6.95 26.76c-1.23 4.73-.7 6.36.53 6.36 1.6 0 6.8-1.96 11.9-6.04l3 4.08C60.5 95.1 46.83 100 41.54 100z" transform="matrix(1.087 0 0 1.2 178.888 205.7)" filter="url(#f)"/>
     </a>
 
-    <a class="side-nav" xlink:title="Previous Article" xlink:href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/terceiro-post/">
+    <a class="side-nav" xlink:title="Previous Article" xlink:href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/quarto-post/">
       <circle cx="185" cy="550" r="40" fill="transparent" />
       <path d="M1149 1784c-233-240-425-440-427-444-1-4 55-62 125-130s269-261 442-429l314-306 137 143 137 143-191 187c-105 103-240 234-299 292l-108 105 291 300 290 299-137 138c-76 76-140 138-143 138s-197-196-431-436z" transform="matrix(.056 0 0 -.057 112.114 626.942)" filter="url(#c)"
       />
@@ -137,15 +137,15 @@
         	<div class="article-header-container lin-gradient">
                 <div class="article-header">
                     <div class="publish-date" style="margin-top: 10px;">
-                        <h3>29</h3></br>NOVEMBER
+                        <h3>05</h3></br>DECEMBER
                     </div>
-                    <h1>Analisando o volume máximo e mínimo do Açude, por mês</h1>
+                    <h1>Dados Acude Velho</h1>
                 </div>
         	</div>
             <div class="article-meta-inf">
                 <a href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/about/" rel="me">by  </a>
-                <text> &nbsp; · &nbsp; 2017-11-29</text>
-                <text> &nbsp; · &nbsp; 2 minutes reading time</text>
+                <text> &nbsp; · &nbsp; 2017-12-05</text>
+                <text> &nbsp; · &nbsp; 1 minutes reading time</text>
                 <a href="javascript:void(0);"><svg id="alignLeft"
 	 xmlns="http://www.w3.org/2000/svg" 
 	 version="1.1" 
@@ -182,47 +182,16 @@
 </a>
             </div>
         	<div id="article-body">
-        			<!DOCTYPE html>
-<html lang="pt-br">
+        			<p>I&rsquo;m here.</p>
 
-<head>
-  <meta charset="utf-8">
-  <title>Barras simples</title>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 
-<body>
-  <div class="container">
-    <div class="row">
-    O tamanho dos círculos indica o volume do açude em cada mês, sendo os círculos amarelos uma representação do volume máximo e o azul a representação do volume mínimo do açude.
-    </div>
-    <div class="row mychart" id="chart">
-    </div>
-  </div>
-
-  <style>
-    .mychart circle {
-      fill: yellow;
-    }
-
-    .mychart circle:hover {
-      fill: lemonchiffon;
-    }
-
-    .mychart text {
-      font: 12px sans-serif;
-      text-anchor: left;
-    }
-  </style>
-
-  <script type="text/javascript">
-    "use strict"
+<script type="text/javascript">
 
     function desenhaGrafico(dados) {
      // definicoes de altura e largura do svg e da vis dentro
       var alturaSVG = 600, larguraSVG = 2000;
-      var	margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do grafico
+      var   margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do grafico
           larguraVis = larguraSVG - margin.left - margin.right,
           alturaVis = alturaSVG - margin.top - margin.bottom;
 
@@ -235,70 +204,17 @@
           .attr('height', alturaVis + margin.top + margin.bottom)
         .append('g') // para entender o <g> v� em x03-detalhes-svg.html
           .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
-
-      /*
-       * As escalas
-       */
-
-      var maxAltura = d3.max(dados, (d, i) => d.noventa_percentil) + 10;
-
-      var x = d3.scaleBand()
-                .domain(dados.map(function(d) { return d.mes; }))
-                .range([0,larguraVis])
-                .padding(.10);
-
-      var y = d3.scaleLinear()
-                .domain([60, maxAltura])
-                .range([alturaVis,0]);
-
-      /*
-       * As marcas
-       */
-
-      grafico.selectAll('g')
-              .data(dados)
-              .enter()
-                .append('circle')
-                  .attr('r', d => d.noventa_percentil)
-                  .attr('cx', d => x(d.mes))
-                  .attr('cy', d => y(d.noventa_percentil));
-
-     grafico.selectAll('g')
-          .data(dados)
-          .enter()
-          .append('circle')
-          .attr('r', d => d.dez_percentil)
-          .attr('cx', d => x(d.mes))
-          .attr('cy', d => y(d.noventa_percentil))
-          .style('fill', '#3393FF');
-
-       /*
-       * Os eixos
-       */
-      grafico.append("g")
-              .attr("class", "x axis")
-              .attr("transform", "translate(0," + alturaVis + ")")
-              .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
-
-      grafico.append('g')
-              .attr('transform', 'translate(0,0)')
-              .call(d3.axisLeft(y))  // gera eixo a partir da escala
-
-      grafico.append("text")
-        .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
-        .text("Volume (%)");
     }
 
-    var dados = "/VisualizacaoAcudeBoqueirao/dados/boqueirao-por-mes.json";
+var dados = "/VisualizacaoAcudeBoqueirao/dados/boqueirao-por-mes.json";
 
     d3.json(dados, function(dados) {
       desenhaGrafico(dados);
     });
 
-  </script>
-</body>
+</script>
 
-</html>
+<p>And I&rsquo;m here. Help.</p>
 
         	</div>
 

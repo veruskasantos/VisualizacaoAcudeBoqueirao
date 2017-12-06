@@ -1,12 +1,23 @@
----
-title: "Analisando o volume máximo e mínimo do Açude, por mês"
-date: 2017-11-29T20:17:10-03:00
-draft: false
----
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
+<head>
+  <meta charset="utf-8">
+  <title>Barras simples</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
 
-   <style>
+<body>
+  <div class="container">
+    <div class="row">
+      <h2>Volume máximo e mínimo do Açude Epitácio Pessoa, por mês</h2>
+    </div>
+    <div class="row mychart" id="chart">
+    </div>
+  </div>
+
+  <style>
     .mychart circle {
       fill: yellow;
     }
@@ -21,29 +32,28 @@ draft: false
     }
   </style>
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    "use strict"
 
     function desenhaGrafico(dados) {
-     // definicoes de altura e largura do svg e da vis dentro
+     
       var alturaSVG = 600, larguraSVG = 2000;
-      var	margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do grafico
+      var	margin = {top: 10, right: 20, bottom:30, left: 100}, 
           larguraVis = larguraSVG - margin.left - margin.right,
           alturaVis = alturaSVG - margin.top - margin.bottom;
 
-      /*
-       * Prepara onde adicionaremos a visualizacao
-       */
-      var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+      
+
+      var grafico = d3.select('#chart') 
         .append('svg')
           .attr('width', larguraVis + margin.left + margin.right)
           .attr('height', alturaVis + margin.top + margin.bottom)
-        .append('g') // para entender o <g> v� em x03-detalhes-svg.html
+        .append('g') 
           .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
 
-      /*
-       * As escalas
-       */
-    
+      
+
+
       var maxAltura = d3.max(dados, (d, i) => d.noventa_percentil) + 10;
 
       var x = d3.scaleBand()
@@ -55,9 +65,8 @@ draft: false
                 .domain([60, maxAltura])
                 .range([alturaVis,0]);
 
-      /*
-       * As marcas
-       */
+      
+
 
       grafico.selectAll('g')
               .data(dados)
@@ -76,27 +85,29 @@ draft: false
           .attr('cy', d => y(d.noventa_percentil))
           .style('fill', '#3393FF');
 
-       /*
-       * Os eixos
-       */
+       
+
       grafico.append("g")
               .attr("class", "x axis")
               .attr("transform", "translate(0," + alturaVis + ")")
-              .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+              .call(d3.axisBottom(x)); 
 
       grafico.append('g')
               .attr('transform', 'translate(0,0)')
-              .call(d3.axisLeft(y))  // gera eixo a partir da escala
+              .call(d3.axisLeft(y))  
 
       grafico.append("text")
         .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
         .text("Volume (%)");
     }
 
-    var dados = "/VisualizacaoAcudeBoqueirao/dados/boqueirao-por-mes.json";
+    var dados = "dados/boqueirao-por-mes.json";
 
     d3.json(dados, function(dados) {
       desenhaGrafico(dados);
     });
 
   </script>
+</body>
+
+</html>

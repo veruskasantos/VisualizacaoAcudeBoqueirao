@@ -146,31 +146,47 @@
                     </div>
                 </div>
                 <div class="playground-body">
-                    <script src="https://d3js.org/d3.v4.min.js"></script>
+                    <!DOCTYPE html>
+<html lang="pt-br">
 
-<p><style>
+<head>
+  <meta charset="utf-8">
+  <title>Barras simples</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+    O tamanho dos círculos indica o volume do açude em cada mês, sendo os círculos amarelos uma representação do volume máximo e o azul a representação do volume mínimo do açude.
+    </div>
+    <div class="row mychart" id="chart">
+    </div>
+  </div>
+
+  <style>
     .mychart circle {
       fill: yellow;
-    }</p>
+    }
 
-<pre><code>.mychart circle:hover {
-  fill: lemonchiffon;
-}
+    .mychart circle:hover {
+      fill: lemonchiffon;
+    }
 
-.mychart text {
-  font: 12px sans-serif;
-  text-anchor: left;
-}
-</code></pre>
+    .mychart text {
+      font: 12px sans-serif;
+      text-anchor: left;
+    }
+  </style>
 
-<p></style></p>
-
-<script type="text/javascript">
+  <script type="text/javascript">
+    "use strict"
 
     function desenhaGrafico(dados) {
      // definicoes de altura e largura do svg e da vis dentro
       var alturaSVG = 600, larguraSVG = 2000;
-      var   margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do grafico
+      var	margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do grafico
           larguraVis = larguraSVG - margin.left - margin.right,
           alturaVis = alturaSVG - margin.top - margin.bottom;
 
@@ -187,7 +203,7 @@
       /*
        * As escalas
        */
-    
+
       var maxAltura = d3.max(dados, (d, i) => d.noventa_percentil) + 10;
 
       var x = d3.scaleBand()
@@ -244,6 +260,9 @@
     });
 
   </script>
+</body>
+
+</html>
 
                 </div>
             
