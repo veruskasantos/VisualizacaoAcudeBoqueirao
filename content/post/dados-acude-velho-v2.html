@@ -4,6 +4,14 @@ date: 2017-12-08T19:17:10-03:00
 draft: false
 ---
 
+O Açude Velho, inicialmente um reservatório de água para abastecimento da cidade de Campina Grande, é hoje um dos maiores e principais pontos turísticos da cidade. Destacando-se pela sua beleza e localização privilegiada - no centro da cidade, o açude também é um lugar atrativo para prática de esportes, como corrida, caminhada e ciclismo. 
+
+Sendo assim, decidimos fazer uma análise sobre o tipo de esporte predominante naquele ambiente, praticado por homens e mulheres em diferentes turnos, onde o tamanho do círculo indica a quantidade e as cores indicam o turno do dia.
+
+Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, naquele dia, os homens praticaram mais esportes em torno do açude.
+É importante destacar que, incrivelmente, o turno da tarde, representado pela cor azul, é o que possui mais movimentação no açude em contrapartida ao turno da noite (roxo).
+
+    Os dados foram coletados pelo LabRua, durante um dia inteiro no Açude Velho.
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,16 +25,13 @@ draft: false
 <body>
   <div class="container">
     <div class="row">
-    oii.
+    
     </div>
     <div class="row mychart" id="chart">
     </div>
   </div>
 
   <style>
-    .mychart circle {
-      fill: yellow;
-    }
 
     .mychart circle:hover {
       fill: lemonchiffon;
@@ -43,7 +48,7 @@ draft: false
 
     function desenhaGrafico(dados) {
      // definicoes de altura e largura do svg e da vis dentro
-      var alturaSVG = 400, larguraSVG = 700;
+      var alturaSVG = 700, larguraSVG = 700;
       var	margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do grafico
           larguraVis = larguraSVG - margin.left - margin.right,
           alturaVis = alturaSVG - margin.top - margin.bottom;
@@ -76,126 +81,170 @@ draft: false
        * As marcas
        */
 
-    //manhã
+       var turnoManha = dados.filter(d => {return d.horario_inicial.slice(0,2) < 12});
+       var turnoTarde = dados.filter(d => {return d.horario_inicial.slice(0,2) >= 12 && d.horario_inicial.slice(0,2) < 18});
+       var turnoNoite = dados.filter(d => {return d.horario_inicial.slice(0,2) >= 18});
+      
+       var peso = 30;
+
+       var turnoManhaMulherPedestre =  turnoManha.map(e => parseInt(e.mulheres_pedestres)).reduce((a,e) => (a + e)) / peso;
+       var turnoTardeMulherPedestre =  turnoTarde.map(e => parseInt(e.mulheres_pedestres)).reduce((a,e) => (a + e)) / peso;
+       var turnoNoiteMulherPedestre =  turnoNoite.map(e => parseInt(e.mulheres_pedestres)).reduce((a,e) => (a + e)) / peso;
+
+       var turnoManhaMulherCiclista =  turnoManha.map(e => parseInt(e.mulheres_ciclistas)).reduce((a,e) => (a + e)) / peso;
+       var turnoTardeMulherCiclista =  turnoTarde.map(e => parseInt(e.mulheres_ciclistas)).reduce((a,e) => (a + e)) / peso;
+       var turnoNoiteMulherCiclista =  turnoNoite.map(e => parseInt(e.mulheres_ciclistas)).reduce((a,e) => (a + e)) / peso;
+
+       var turnoManhaHomemPedestre =  turnoManha.map(e => parseInt(e.homens_pedestres)).reduce((a,e) => (a + e)) / peso;
+       var turnoTardeHomemPedestre =  turnoTarde.map(e => parseInt(e.homens_pedestres)).reduce((a,e) => (a + e)) / peso;
+       var turnoNoiteHomemPedestre =  turnoNoite.map(e => parseInt(e.homens_pedestres)).reduce((a,e) => (a + e)) / peso;
+
+       var turnoManhaHomemCiclista =  turnoManha.map(e => parseInt(e.homens_ciclistas)).reduce((a,e) => (a + e)) / peso;
+       var turnoTardeHomemCiclista =  turnoTarde.map(e => parseInt(e.homens_ciclistas)).reduce((a,e) => (a + e)) / peso;
+       var turnoNoiteHomemCiclista =  turnoNoite.map(e => parseInt(e.homens_ciclistas)).reduce((a,e) => (a + e)) / peso;
+       
+       console.log(turnoManhaMulherPedestre);
+       console.log(turnoTardeMulherPedestre);
+       console.log(turnoNoiteMulherPedestre);
+
+       console.log(turnoManhaMulherCiclista);
+       console.log(turnoTardeMulherCiclista);
+       console.log(turnoNoiteMulherCiclista);
+
+       console.log(turnoManhaHomemPedestre);
+       console.log(turnoTardeHomemPedestre);
+       console.log(turnoNoiteHomemPedestre);
+
+       console.log(turnoManhaHomemCiclista);
+       console.log(turnoTardeHomemCiclista);
+       console.log(turnoNoiteHomemCiclista);
+
+       var corManha = '#D9D3B3'; //cinza
+       var corTarde = '#499B8F'; //azul
+       var corNoite = '#A63467'; //roxo
+
+    //tarde mulher pedestre
+     grafico.selectAll('g')
+          .data(dados)
+          .enter()
+          .append('circle')
+          .attr('r', turnoTardeMulherPedestre)
+          .attr('cx', x(t[0]))
+          .attr('cy', 150)
+          .style('fill', corTarde);
+
+//manhã mulher pedestre
     grafico.selectAll('g')
               .data(dados)
               .enter()
               .append('circle')
-              .attr('r', 50)
+              .attr('r', turnoManhaMulherPedestre)
               .attr('cx', x(t[0]))
-              .attr('cy', 100)
-              .style('fill', '#a1d76a');
-
-    //tarde
-     grafico.selectAll('g')
-          .data(dados)
-          .enter()
-          .append('circle')
-          .attr('r', 40)
-          .attr('cx', x(t[0]))
-          .attr('cy', 100)
-          .style('fill', '#e9a3c9');
-
-
-    //noite
+              .attr('cy', 150)
+              .style('fill', corManha)
+              ;
+    //noite mulher pedestre
      grafico.selectAll('g')
               .data(dados)
               .enter()
                 .append('circle')
-                  .attr('r', 30)
+                  .attr('r', turnoNoiteMulherPedestre)
                   .attr('cx', x(t[0]))
-                  .attr('cy', 100)
-                  .style('fill', "f7f7f7");;
+                  .attr('cy', 150)
+                  .style('fill', corNoite);
 
-    //manha
-     grafico.selectAll('g')
-          .data(dados)
-          .enter()
-          .append('circle')
-          .attr('r', 40)
-          .attr('cx', x(t[1]))
-          .attr('cy', 100)
-          .style('fill', '#a1d76a');
-
-    //tarde
+    
+    //tarde mulher ciclista
      grafico.selectAll('g')
               .data(dados)
               .enter()
               .append('circle')
-              .attr('r', 30)
+              .attr('r', turnoTardeMulherCiclista)
               .attr('cx', x(t[1]))
-              .attr('cy', 100)
-              .style('fill', '#e9a3c9');
+              .attr('cy', 150)
+              .style('fill', corTarde); //'#e9a3c9'
 
-    //noite
+//manha mulher ciclista
      grafico.selectAll('g')
           .data(dados)
           .enter()
           .append('circle')
-          .attr('r', 20)
+          .attr('r', turnoManhaMulherCiclista)
           .attr('cx', x(t[1]))
-          .attr('cy', 100)
-          .style('fill', 'f7f7f7');
+          .attr('cy', 150)
+          .style('fill', corManha);//'#a1d76a'
 
-    //manha
-     grafico.selectAll('g')
-              .data(dados)
-              .enter()
-              .append('circle')
-              .attr('r', 30)
-              .attr('cx', x(t[0]))
-              .attr('cy', 300)
-              .style('fill', '#a1d76a');
 
-    //tarde
+    //noite mulher ciclista
      grafico.selectAll('g')
           .data(dados)
           .enter()
           .append('circle')
-          .attr('r', 20)
+          .attr('r', turnoNoiteMulherCiclista)
+          .attr('cx', x(t[1]))
+          .attr('cy', 150)
+          .style('fill', corNoite);//'f7f7f7'
+
+    //tarde homem pedestre
+     grafico.selectAll('g')
+          .data(dados)
+          .enter()
+          .append('circle')
+          .attr('r', turnoTardeHomemPedestre)
           .attr('cx', x(t[0]))
-          .attr('cy', 300)
-          .style('fill', '#e9a3c9');
+          .attr('cy', 350)
+          .style('fill', corTarde);
 
-      //noite
+      //noite homem pedestre
       grafico.selectAll('g')
               .data(dados)
               .enter()
               .append('circle')
-              .attr('r', 10)
+              .attr('r', turnoNoiteHomemPedestre)
               .attr('cx', x(t[0]))
-              .attr('cy', 300)
-              .style('fill', 'f7f7f7');
+              .attr('cy', 350)
+              .style('fill', corNoite);
 
-    //manha
+
+    //manha homem pedestre
+     grafico.selectAll('g')
+              .data(dados)
+              .enter()
+              .append('circle')
+              .attr('r', turnoManhaHomemPedestre)
+              .attr('cx', x(t[0]))
+              .attr('cy', 350)
+              .style('fill', corManha);
+
+    //manha homem ciclista
      grafico.selectAll('g')
           .data(dados)
           .enter()
           .append('circle')
-          .attr('r', 50)
+          .attr('r', turnoManhaHomemCiclista)
           .attr('cx', x(t[1]))
-          .attr('cy', 300)
-          .style('fill', '#a1d76a');
+          .attr('cy', 350)
+          .style('fill', corManha);
 
-      //tarde
+      //tarde homem ciclista
       grafico.selectAll('g')
               .data(dados)
               .enter()
               .append('circle')
-              .attr('r', 40)
+              .attr('r', turnoTardeHomemCiclista)
               .attr('cx', x(t[1]))
-              .attr('cy', 300)
-              .style('fill', '#e9a3c9');
+              .attr('cy', 350)
+              .style('fill', corTarde);
 
-      //noite
+      //noite homem ciclista
      grafico.selectAll('g')
           .data(dados)
           .enter()
           .append('circle')
-          .attr('r', 30)
+          .attr('r', turnoNoiteHomemCiclista)
           .attr('cx', x(t[1]))
-          .attr('cy', 300)
-          .style('fill', '#f7f7f7');
+          .attr('cy', 350)
+          .style('fill', corNoite);
 
        
       grafico.append("text")
