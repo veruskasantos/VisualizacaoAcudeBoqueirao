@@ -1,0 +1,151 @@
+---
+title: "parte 3"
+date: 2017-12-05T20:17:10-03:00
+draft: false
+---
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+    um texto.
+    </div>
+    <div class="row mychart" id="chart">
+    </div>
+  </div>
+
+<style>
+    .mychart circle {
+      fill: yellow;
+    }
+
+    .mychart circle:hover {
+      fill: lemonchiffon;
+    }
+
+    .mychart text {
+      font: 12px sans-serif;
+      text-anchor: left;
+    }
+  </style>
+
+  <script type="text/javascript">
+    "use strict"
+
+    function desenhaGrafico(dados) {
+     // definicoes de altura e largura do svg e da vis dentro
+      var alturaSVG = 400, larguraSVG = 900;
+      var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+          larguraVis = larguraSVG - margin.left - margin.right,
+          alturaVis = alturaSVG - margin.top - margin.bottom;
+
+      /*
+       * Prepara onde adicionaremos a visualizacao
+       */
+      var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+        .append('svg')
+          .attr('width', larguraVis + margin.left + margin.right)
+          .attr('height', alturaVis + margin.top + margin.bottom)
+        .append('g') // para entender o <g> v� em x03-detalhes-svg.html
+          .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+
+      /*
+       * As escalas
+       */
+
+      var turnos = ["Manhã", "Tarde", "Noite"];
+      var maxMotorizados = d3.max(dados, (d) => d.total_motorizados);
+	  var maxCiclista = d3.max(dados, (d) => d.total_ciclistas);
+	  var maxPedestre = d3.max(dados, (d) => d.total_pedestres);
+	  console.log(maxMotorizados); //1457 manha
+	  console.log(maxCiclista); //276 manha
+	  console.log(maxPedestre); //285 tarde
+	  var maxAltura = Math.max(maxMotorizados, maxCiclista, maxPedestre);
+      var x = d3.scaleBand()
+                .domain(dados.map(function(d) {
+                	if (d.horario_inicial.slice(0,2) <= 12) {
+                		return turnos[0];
+                	} else if (d.horario_inicial.slice(0,2) <= 18) {
+                		return turnos[1];
+                	} else {
+                		return turnos[2];
+                	}
+                }))
+                .range([0,larguraVis])
+                .padding(.3);
+
+      var y = d3.scaleLinear()
+                .domain([0, maxAltura])
+                .range([alturaVis,0]);
+
+      /*
+       * As marcas
+       */
+
+      grafico.selectAll('g')
+              .data(dados)
+              .enter()
+                .append('rect')
+                  .attr('x', d => x(d.horario_inicial))
+                  .attr('width', x.bandwidth())
+                  .attr('y', d => maxPedestre)
+                  .attr('height', (d) => alturaVis - y(d.total_motorizados));
+
+       /*grafico.selectAll('g')
+              .data(dados)
+              .enter()
+                .append('rect')
+                  .attr('x', d => x(d.horario_inicial))
+                  .attr('width', x.bandwidth())
+                  .attr('y', d => y(d.total_ciclistas))
+                  .attr('height', (d) => alturaVis - y(d.total_ciclistas));
+
+        grafico.selectAll('g')
+              .data(dados)
+              .enter()
+                .append('rect')
+                  .attr('x', d => x(d.horario_inicial))
+                  .attr('width', x.bandwidth())
+                  .attr('y', d => y(d.total_pedestres))
+                  .attr('height', (d) => alturaVis - y(d.total_pedestres));
+*/
+        /*
+       * Os eixos
+       */
+      grafico.append("g")
+              .attr("class", "x axis")
+              .attr("transform", "translate(0," + alturaVis + ")")
+              .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+
+      grafico.append('g')
+              .attr('transform', 'translate(0,0)')
+              .call(d3.axisLeft(y))  // gera eixo a partir da escala
+
+      grafico.append("text")
+        .attr("transform", "translate(-30," + (alturaVis + margin.top)/2 + ") rotate(-90)")
+        .text("Valor");
+
+     }
+
+    var dadosCSV = "/VisualizacaoAcudeBoqueirao/dados/dados-acude-velho.csv";
+
+    d3.csv(dadosCSV, function(dados) {
+      desenhaGrafico(dados);
+    });
+
+  </script>
+
+
+
+ </body>
+
+ </html>

@@ -1,0 +1,228 @@
+---
+title: "parte 3-2"
+date: 2017-12-08T19:17:10-03:00
+draft: false
+---
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+    oii.
+    </div>
+    <div class="row mychart" id="chart">
+    </div>
+  </div>
+
+  <style>
+    .mychart circle {
+      fill: yellow;
+    }
+
+    .mychart circle:hover {
+      fill: lemonchiffon;
+    }
+
+    .mychart text {
+      font: 12px sans-serif;
+      text-anchor: left;
+    }
+  </style>
+
+  <script type="text/javascript">
+    "use strict"
+
+    function desenhaGrafico(dados) {
+     // definicoes de altura e largura do svg e da vis dentro
+      var alturaSVG = 400, larguraSVG = 700;
+      var	margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do grafico
+          larguraVis = larguraSVG - margin.left - margin.right,
+          alturaVis = alturaSVG - margin.top - margin.bottom;
+
+      /*
+       * Prepara onde adicionaremos a visualizacao
+       */
+      var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+        .append('svg')
+          .attr('width', larguraVis + margin.left + margin.right)
+          .attr('height', alturaVis + margin.top + margin.bottom)
+        .append('g') // para entender o <g> v� em x03-detalhes-svg.html
+          .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+
+      /*
+       * As escalas
+       */
+
+      var t = ["Pedestres", "Ciclistas"];
+      var x = d3.scaleBand()
+                .domain(t)
+                .range([0,larguraVis])
+                .padding(.10);
+
+      var y = d3.scaleLinear()
+                .domain([-500, 500])
+                .range([0, alturaVis]);
+
+      /*
+       * As marcas
+       */
+
+    //manhã
+    grafico.selectAll('g')
+              .data(dados)
+              .enter()
+              .append('circle')
+              .attr('r', 50)
+              .attr('cx', x(t[0]))
+              .attr('cy', 100)
+              .style('fill', '#a1d76a');
+
+    //tarde
+     grafico.selectAll('g')
+          .data(dados)
+          .enter()
+          .append('circle')
+          .attr('r', 40)
+          .attr('cx', x(t[0]))
+          .attr('cy', 100)
+          .style('fill', '#e9a3c9');
+
+
+    //noite
+     grafico.selectAll('g')
+              .data(dados)
+              .enter()
+                .append('circle')
+                  .attr('r', 30)
+                  .attr('cx', x(t[0]))
+                  .attr('cy', 100)
+                  .style('fill', "f7f7f7");;
+
+    //manha
+     grafico.selectAll('g')
+          .data(dados)
+          .enter()
+          .append('circle')
+          .attr('r', 40)
+          .attr('cx', x(t[1]))
+          .attr('cy', 100)
+          .style('fill', '#a1d76a');
+
+    //tarde
+     grafico.selectAll('g')
+              .data(dados)
+              .enter()
+              .append('circle')
+              .attr('r', 30)
+              .attr('cx', x(t[1]))
+              .attr('cy', 100)
+              .style('fill', '#e9a3c9');
+
+    //noite
+     grafico.selectAll('g')
+          .data(dados)
+          .enter()
+          .append('circle')
+          .attr('r', 20)
+          .attr('cx', x(t[1]))
+          .attr('cy', 100)
+          .style('fill', 'f7f7f7');
+
+    //manha
+     grafico.selectAll('g')
+              .data(dados)
+              .enter()
+              .append('circle')
+              .attr('r', 30)
+              .attr('cx', x(t[0]))
+              .attr('cy', 300)
+              .style('fill', '#a1d76a');
+
+    //tarde
+     grafico.selectAll('g')
+          .data(dados)
+          .enter()
+          .append('circle')
+          .attr('r', 20)
+          .attr('cx', x(t[0]))
+          .attr('cy', 300)
+          .style('fill', '#e9a3c9');
+
+      //noite
+      grafico.selectAll('g')
+              .data(dados)
+              .enter()
+              .append('circle')
+              .attr('r', 10)
+              .attr('cx', x(t[0]))
+              .attr('cy', 300)
+              .style('fill', 'f7f7f7');
+
+    //manha
+     grafico.selectAll('g')
+          .data(dados)
+          .enter()
+          .append('circle')
+          .attr('r', 50)
+          .attr('cx', x(t[1]))
+          .attr('cy', 300)
+          .style('fill', '#a1d76a');
+
+      //tarde
+      grafico.selectAll('g')
+              .data(dados)
+              .enter()
+              .append('circle')
+              .attr('r', 40)
+              .attr('cx', x(t[1]))
+              .attr('cy', 300)
+              .style('fill', '#e9a3c9');
+
+      //noite
+     grafico.selectAll('g')
+          .data(dados)
+          .enter()
+          .append('circle')
+          .attr('r', 30)
+          .attr('cx', x(t[1]))
+          .attr('cy', 300)
+          .style('fill', '#f7f7f7');
+
+       
+      grafico.append("text")
+        .attr("transform", "translate(5," + (alturaVis + margin.top)/10 + ")")
+        .text("Pedestres");
+
+      grafico.append("text")
+        .attr("transform", "translate(280," + (alturaVis + margin.top)/10 + ")")
+        .text("Ciclistas");
+
+      grafico.append("text")
+        .attr("transform", "translate(400," + (alturaVis + margin.top)/4 + ")")
+        .text("Mulheres");
+
+      grafico.append("text")
+        .attr("transform", "translate(400," + (alturaVis + margin.top)*0.8 + ")")
+        .text("Homens");
+      
+    }
+
+    var dadosCSV = "/VisualizacaoAcudeBoqueirao/dados/dados-acude-velho.csv";
+
+    d3.csv(dadosCSV, function(dados) {
+      desenhaGrafico(dados);
+    });
+
+  </script>
+</body>
+
+</html>
