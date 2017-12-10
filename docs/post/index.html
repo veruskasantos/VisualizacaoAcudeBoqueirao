@@ -368,7 +368,7 @@
 
   </script>
 
-	<img src="/VisualizacaoAcudeBoqueirao/dados/legenda-acude-velho-veiculos.png" alt="Legenda">
+	<img src="/VisualizacaoDaInformacao/dados/legenda-acude-velho-veiculos.png" alt="Legenda">
 
  </body>
 
@@ -744,7 +744,7 @@ A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres
 
   </script>
 
-  <img src="/VisualizacaoAcudeBoqueirao/dados/legenda-acude-velho.png" alt="Legenda">
+  <img src="/VisualizacaoDaInformacao/dados/legenda-acude-velho.png" alt="Legenda">
 
 </body>
 
@@ -868,7 +868,9 @@ A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres
                     </div>
                 </div>
                 <div class="playground-body">
-                    <!DOCTYPE html>
+                    O tamanho dos círculos indica o volume do açude em cada mês, sendo os círculos amarelos uma representação do volume máximo e o azul a representação do volume mínimo do açude.
+
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -879,9 +881,6 @@ A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres
 
 <body>
   <div class="container">
-    <div class="row">
-    O tamanho dos círculos indica o volume do açude em cada mês, sendo os círculos amarelos uma representação do volume máximo e o azul a representação do volume mínimo do açude.
-    </div>
     <div class="row mychart" id="chart">
     </div>
   </div>
@@ -974,7 +973,7 @@ A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres
         .text("Volume (%)");
     }
 
-    var dados = "/VisualizacaoAcudeBoqueirao/dados/boqueirao-por-mes.json";
+    var dados = "/VisualizacaoDaInformacao/dados/boqueirao-por-mes.json";
 
     d3.json(dados, function(dados) {
       desenhaGrafico(dados);

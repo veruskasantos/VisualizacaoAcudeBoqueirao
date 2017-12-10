@@ -4,6 +4,8 @@ date: 2017-11-29T20:17:10-03:00
 draft: false
 ---
 
+ O tamanho dos círculos indica o volume do açude em cada mês, sendo os círculos amarelos uma representação do volume máximo e o azul a representação do volume mínimo do açude.
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,9 +17,6 @@ draft: false
 
 <body>
   <div class="container">
-    <div class="row">
-    O tamanho dos círculos indica o volume do açude em cada mês, sendo os círculos amarelos uma representação do volume máximo e o azul a representação do volume mínimo do açude.
-    </div>
     <div class="row mychart" id="chart">
     </div>
   </div>
@@ -110,7 +109,7 @@ draft: false
         .text("Volume (%)");
     }
 
-    var dados = "/VisualizacaoAcudeBoqueirao/dados/boqueirao-por-mes.json";
+    var dados = "/VisualizacaoDaInformacao/dados/boqueirao-por-mes.json";
 
     d3.json(dados, function(dados) {
       desenhaGrafico(dados);

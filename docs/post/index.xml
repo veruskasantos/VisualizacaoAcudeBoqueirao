@@ -35,7 +35,7 @@
       <pubDate>Wed, 29 Nov 2017 20:17:10 -0300</pubDate>
       
       <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/quarto-post/</guid>
-      <description>O tamanho dos círculos indica o volume do açude em cada mês, sendo os círculos amarelos uma representação do volume máximo e o azul a representação do volume mínimo do açude..mychart circle {fill: yellow;}.mychart circle:hover {fill: lemonchiffon;}.mychart text {font: 12px sans-serif;text-anchor: left;}&#34;use strict&#34;function desenhaGrafico(dados) {// definicoes de altura e largura do svg e da vis dentrovar alturaSVG = 600, larguraSVG = 2000;var	margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do graficolarguraVis = larguraSVG - margin.</description>
+      <description>O tamanho dos círculos indica o volume do açude em cada mês, sendo os círculos amarelos uma representação do volume máximo e o azul a representação do volume mínimo do açude..mychart circle {fill: yellow;}.mychart circle:hover {fill: lemonchiffon;}.mychart text {font: 12px sans-serif;text-anchor: left;}&#34;use strict&#34;function desenhaGrafico(dados) {// definicoes de altura e largura do svg e da vis dentrovar alturaSVG = 600, larguraSVG = 2000;var	margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do graficolarguraVis = larguraSVG - margin.</description>
     </item>
     
     <item>
