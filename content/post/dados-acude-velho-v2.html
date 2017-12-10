@@ -1,17 +1,17 @@
 ---
-title: "parte 3-2"
-date: 2017-12-08T19:17:10-03:00
+title: "Diferente do esperado, o Açude Velho recebe mais pessoas no período da tarde"
+date: 2017-12-09T19:17:10-03:00
 draft: false
 ---
 
 O Açude Velho, inicialmente um reservatório de água para abastecimento da cidade de Campina Grande, é hoje um dos maiores e principais pontos turísticos da cidade. Destacando-se pela sua beleza e localização privilegiada - no centro da cidade, o açude também é um lugar atrativo para prática de esportes, como corrida, caminhada e ciclismo. 
 
-Sendo assim, decidimos fazer uma análise sobre o tipo de esporte predominante naquele ambiente, praticado por homens e mulheres em diferentes turnos, onde o tamanho do círculo indica a quantidade e as cores indicam o turno do dia.
+Sendo assim, decidimos fazer uma análise sobre o tipo de esporte predominante naquele ambiente, praticado por homens e mulheres, em diferentes turnos; onde o tamanho do círculo indica a quantidade e as cores indicam o turno do dia.
 
-Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, naquele dia, os homens praticaram mais esportes em torno do açude.
-É importante destacar que, incrivelmente, o turno da tarde, representado pela cor azul, é o que possui mais movimentação no açude em contrapartida ao turno da noite (roxo).
+Mesmo a população feminina sendo dominante em Campina Grande (Fonte:  <a href="https://cidades.ibge.gov.br/">IBGE</a>), perceba que, em um determinado dia, os homens praticaram mais esportes em torno do açude.
+É importante destacar que, incrivelmente, o turno da tarde, representado pela cor azul, é o que possui mais movimentação no Açude Velho, em contrapartida ao turno da noite (roxo).
 
-    Os dados foram coletados pelo LabRua, durante um dia inteiro no Açude Velho.
+A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres e os números são ainda menores quando se tratam de mulheres ciclistas.
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,10 +37,6 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
       fill: lemonchiffon;
     }
 
-    .mychart text {
-      font: 12px sans-serif;
-      text-anchor: left;
-    }
   </style>
 
   <script type="text/javascript">
@@ -48,7 +44,7 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
 
     function desenhaGrafico(dados) {
      // definicoes de altura e largura do svg e da vis dentro
-      var alturaSVG = 700, larguraSVG = 700;
+      var alturaSVG = 650, larguraSVG = 700;
       var	margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do grafico
           larguraVis = larguraSVG - margin.left - margin.right,
           alturaVis = alturaSVG - margin.top - margin.bottom;
@@ -103,22 +99,6 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
        var turnoTardeHomemCiclista =  turnoTarde.map(e => parseInt(e.homens_ciclistas)).reduce((a,e) => (a + e)) / peso;
        var turnoNoiteHomemCiclista =  turnoNoite.map(e => parseInt(e.homens_ciclistas)).reduce((a,e) => (a + e)) / peso;
        
-       console.log(turnoManhaMulherPedestre);
-       console.log(turnoTardeMulherPedestre);
-       console.log(turnoNoiteMulherPedestre);
-
-       console.log(turnoManhaMulherCiclista);
-       console.log(turnoTardeMulherCiclista);
-       console.log(turnoNoiteMulherCiclista);
-
-       console.log(turnoManhaHomemPedestre);
-       console.log(turnoTardeHomemPedestre);
-       console.log(turnoNoiteHomemPedestre);
-
-       console.log(turnoManhaHomemCiclista);
-       console.log(turnoTardeHomemCiclista);
-       console.log(turnoNoiteHomemCiclista);
-
        var corManha = '#D9D3B3'; //cinza
        var corTarde = '#499B8F'; //azul
        var corNoite = '#A63467'; //roxo
@@ -141,8 +121,8 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
               .attr('r', turnoManhaMulherPedestre)
               .attr('cx', x(t[0]))
               .attr('cy', 150)
-              .style('fill', corManha)
-              ;
+              .style('fill', corManha);
+              
     //noite mulher pedestre
      grafico.selectAll('g')
               .data(dados)
@@ -162,7 +142,7 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
               .attr('r', turnoTardeMulherCiclista)
               .attr('cx', x(t[1]))
               .attr('cy', 150)
-              .style('fill', corTarde); //'#e9a3c9'
+              .style('fill', corTarde);
 
 //manha mulher ciclista
      grafico.selectAll('g')
@@ -172,7 +152,7 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
           .attr('r', turnoManhaMulherCiclista)
           .attr('cx', x(t[1]))
           .attr('cy', 150)
-          .style('fill', corManha);//'#a1d76a'
+          .style('fill', corManha);
 
 
     //noite mulher ciclista
@@ -183,7 +163,7 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
           .attr('r', turnoNoiteMulherCiclista)
           .attr('cx', x(t[1]))
           .attr('cy', 150)
-          .style('fill', corNoite);//'f7f7f7'
+          .style('fill', corNoite);
 
     //tarde homem pedestre
      grafico.selectAll('g')
@@ -192,7 +172,7 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
           .append('circle')
           .attr('r', turnoTardeHomemPedestre)
           .attr('cx', x(t[0]))
-          .attr('cy', 350)
+          .attr('cy', 400)
           .style('fill', corTarde);
 
       //noite homem pedestre
@@ -202,7 +182,7 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
               .append('circle')
               .attr('r', turnoNoiteHomemPedestre)
               .attr('cx', x(t[0]))
-              .attr('cy', 350)
+              .attr('cy', 400)
               .style('fill', corNoite);
 
 
@@ -213,7 +193,7 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
               .append('circle')
               .attr('r', turnoManhaHomemPedestre)
               .attr('cx', x(t[0]))
-              .attr('cy', 350)
+              .attr('cy', 400)
               .style('fill', corManha);
 
     //manha homem ciclista
@@ -223,7 +203,7 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
           .append('circle')
           .attr('r', turnoManhaHomemCiclista)
           .attr('cx', x(t[1]))
-          .attr('cy', 350)
+          .attr('cy', 400)
           .style('fill', corManha);
 
       //tarde homem ciclista
@@ -233,7 +213,7 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
               .append('circle')
               .attr('r', turnoTardeHomemCiclista)
               .attr('cx', x(t[1]))
-              .attr('cy', 350)
+              .attr('cy', 400)
               .style('fill', corTarde);
 
       //noite homem ciclista
@@ -243,25 +223,29 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
           .append('circle')
           .attr('r', turnoNoiteHomemCiclista)
           .attr('cx', x(t[1]))
-          .attr('cy', 350)
+          .attr('cy', 400)
           .style('fill', corNoite);
 
        
       grafico.append("text")
-        .attr("transform", "translate(5," + (alturaVis + margin.top)/10 + ")")
-        .text("Pedestres");
+        .attr("transform", "translate(-20," + (alturaVis + margin.top)/12 + ")")
+        .text("Pedestres")
+        .style('font-size', '20');
 
       grafico.append("text")
-        .attr("transform", "translate(280," + (alturaVis + margin.top)/10 + ")")
-        .text("Ciclistas");
+        .attr("transform", "translate(250," + (alturaVis + margin.top)/12 + ")")
+        .text("Ciclistas")
+        .style('font-size', '20');
 
       grafico.append("text")
-        .attr("transform", "translate(400," + (alturaVis + margin.top)/4 + ")")
-        .text("Mulheres");
+        .attr("transform", "translate(400," + (alturaVis + margin.top)*0.23 + ")")
+        .text("Mulheres")
+        .style('font-size', '20');
 
       grafico.append("text")
-        .attr("transform", "translate(400," + (alturaVis + margin.top)*0.8 + ")")
-        .text("Homens");
+        .attr("transform", "translate(400," + (alturaVis + margin.top)*0.6 + ")")
+        .text("Homens")
+        .style('font-size', '20');
       
     }
 
@@ -272,6 +256,9 @@ Mesmo a população feminina sendo dominante em Campina Grande, percebe-se que, 
     });
 
   </script>
+
+  <img src="/VisualizacaoAcudeBoqueirao/dados/legenda-acude-velho.png" alt="Legenda">
+
 </body>
 
 </html>

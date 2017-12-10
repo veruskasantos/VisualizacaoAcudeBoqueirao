@@ -2,7 +2,7 @@
 # Run via: hugo server --theme=Shapez-Theme --buildDrafts --bind="0.0.0.0"
 
 baseurl = "https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/"
-title = "Açude Epitácio Pessoa"
+title = "Visualização da Informação"
 theme = "Shapez-Theme"
 publishDir = "docs"
 copyright = "Copyright (c) 2017, Veruska Santos"
@@ -19,11 +19,11 @@ googleAnalytics = ""
     description = "Quando o açude estiver cheio, se prepare..."
 
     # Homepage Start-Screen, variables can be left empty, links dont start with /
-    title_l1 = "Açude Epitácio Pessoa"
-    title_l2 = "Boqueirão"
-    subtitle_l1 = "Veja abaixo algumas análises feitas sobre"
-    subtitle_l2 = "o volume deste tão importante açude."
-    subtitle_l3 = "Dados atualizados pelo INSA."
+    title_l1 = ""
+    title_l2 = "Campina Grande - PB"
+    subtitle_l1 = "Açude Epitácio Pessoa"
+    subtitle_l2 = "Açude Velho"
+    subtitle_l3 = ""
     subtitle_link = ""
 
     start_screen_image_quality = "auto"
