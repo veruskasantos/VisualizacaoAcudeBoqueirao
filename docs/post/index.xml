@@ -6,27 +6,27 @@
     <description>Recent content in Posts on Visualização da Informação</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 2017, Veruska Santos</copyright>
-    <lastBuildDate>Sat, 09 Dec 2017 19:17:10 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 09 Dec 2017 20:17:10 -0300</lastBuildDate>
     
 	<atom:link href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Diferente do esperado, o Açude Velho recebe mais pessoas no período da tarde</title>
-      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho-v2/</link>
-      <pubDate>Sat, 09 Dec 2017 19:17:10 -0300</pubDate>
+      <title>Uso dos meios de transporte em torno do Açude Velho: ciclistas estão em 3º lugar</title>
+      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho/</link>
+      <pubDate>Sat, 09 Dec 2017 20:17:10 -0300</pubDate>
       
-      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho-v2/</guid>
-      <description>O Açude Velho, inicialmente um reservatório de água para abastecimento da cidade de Campina Grande, é hoje um dos maiores e principais pontos turísticos da cidade. Destacando-se pela sua beleza e localização privilegiada - no centro da cidade, o açude também é um lugar atrativo para prática de esportes, como corrida, caminhada e ciclismo. Sendo assim, decidimos fazer uma análise sobre o tipo de esporte predominante naquele ambiente, praticado por homens e mulheres, em diferentes turnos; onde o tamanho do círculo indica a quantidade e as cores indicam o turno do dia.</description>
+      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho/</guid>
+      <description>Dando continuidade às análises sobre os dados de movimentação no Açude Velho, constatou-se que os veículos motorizados são predominantes naquele área, em qualquer turno, totalizando mais de 75000 veículos, por dia. Em segundo lugar estão os pedestres, totalizando aproximadamente 14000 pessoas caminhando no açude; e em último lugar estão os ciclistas, não ultrapassando a marca de 4000, por dia. Como é possível ver na visualização abaixo, a maior movimentação naquela área está no turno da tarde, que compreende os horários de 12h até às 18h.</description>
     </item>
     
     <item>
-      <title>parte 3</title>
-      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho/</link>
-      <pubDate>Tue, 05 Dec 2017 20:17:10 -0300</pubDate>
+      <title>Diferente do esperado, o Açude Velho recebe mais pessoas no período da tarde</title>
+      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho-v2/</link>
+      <pubDate>Tue, 05 Dec 2017 19:17:10 -0300</pubDate>
       
-      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho/</guid>
-      <description>um texto..mychart circle {fill: yellow;}.mychart circle:hover {fill: lemonchiffon;}.mychart text {font: 12px sans-serif;text-anchor: left;}&#34;use strict&#34;function desenhaGrafico(dados) {// definicoes de altura e largura do svg e da vis dentrovar alturaSVG = 400, larguraSVG = 900;var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do graficolarguraVis = larguraSVG - margin.</description>
+      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho-v2/</guid>
+      <description>O Açude Velho, inicialmente um reservatório de água para abastecimento da cidade de Campina Grande, é hoje um dos maiores e principais pontos turísticos da cidade. Destacando-se pela sua beleza e localização privilegiada - no centro da cidade, o açude também é um lugar atrativo para prática de esportes, como corrida, caminhada e ciclismo. Sendo assim, decidimos fazer uma análise sobre o tipo de esporte predominante naquele ambiente, praticado por homens e mulheres, em diferentes turnos; onde o tamanho do círculo indica a quantidade e as cores indicam o turno do dia.</description>
     </item>
     
     <item>
