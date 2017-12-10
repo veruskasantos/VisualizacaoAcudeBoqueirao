@@ -1,7 +1,7 @@
 # Creator: djuelg @ https://github.com/djuelg
 # Run via: hugo server --theme=Shapez-Theme --buildDrafts --bind="0.0.0.0"
 
-baseurl = "https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/"
+baseurl = "https://veruskasantos.github.io/VisualizacaoDaInformacao/"
 title = "Visualização da Informação"
 theme = "Shapez-Theme"
 publishDir = "docs"

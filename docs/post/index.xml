@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Visualização da Informação</title>
-    <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/</link>
+    <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/</link>
     <description>Recent content in Posts on Visualização da Informação</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 2017, Veruska Santos</copyright>
     <lastBuildDate>Sat, 09 Dec 2017 20:17:10 -0300</lastBuildDate>
     
-	<atom:link href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://veruskasantos.github.io/VisualizacaoDaInformacao/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Uso dos meios de transporte em torno do Açude Velho: ciclistas estão em 3º lugar</title>
-      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho/</link>
+      <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/dados-acude-velho/</link>
       <pubDate>Sat, 09 Dec 2017 20:17:10 -0300</pubDate>
       
-      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho/</guid>
+      <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/dados-acude-velho/</guid>
       <description>Dando continuidade às análises sobre os dados de movimentação no Açude Velho, constatou-se que os veículos motorizados são predominantes naquele área, em qualquer turno, totalizando mais de 75000 veículos, por dia. Em segundo lugar estão os pedestres, totalizando aproximadamente 14000 pessoas caminhando no açude; e em último lugar estão os ciclistas, não ultrapassando a marca de 4000, por dia. Como é possível ver na visualização abaixo, a maior movimentação naquela área está no turno da tarde, que compreende os horários de 12h até às 18h.</description>
     </item>
     
     <item>
       <title>Diferente do esperado, o Açude Velho recebe mais pessoas no período da tarde</title>
-      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho-v2/</link>
+      <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/dados-acude-velho-v2/</link>
       <pubDate>Tue, 05 Dec 2017 19:17:10 -0300</pubDate>
       
-      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/dados-acude-velho-v2/</guid>
+      <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/dados-acude-velho-v2/</guid>
       <description>O Açude Velho, inicialmente um reservatório de água para abastecimento da cidade de Campina Grande, é hoje um dos maiores e principais pontos turísticos da cidade. Destacando-se pela sua beleza e localização privilegiada - no centro da cidade, o açude também é um lugar atrativo para prática de esportes, como corrida, caminhada e ciclismo. Sendo assim, decidimos fazer uma análise sobre o tipo de esporte predominante naquele ambiente, praticado por homens e mulheres, em diferentes turnos; onde o tamanho do círculo indica a quantidade e as cores indicam o turno do dia.</description>
     </item>
     
     <item>
       <title>Analisando o volume máximo e mínimo do Açude, por mês</title>
-      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/quarto-post/</link>
+      <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/quarto-post/</link>
       <pubDate>Wed, 29 Nov 2017 20:17:10 -0300</pubDate>
       
-      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/quarto-post/</guid>
+      <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/quarto-post/</guid>
       <description>O tamanho dos círculos indica o volume do açude em cada mês, sendo os círculos amarelos uma representação do volume máximo e o azul a representação do volume mínimo do açude..mychart circle {fill: yellow;}.mychart circle:hover {fill: lemonchiffon;}.mychart text {font: 12px sans-serif;text-anchor: left;}&#34;use strict&#34;function desenhaGrafico(dados) {// definicoes de altura e largura do svg e da vis dentrovar alturaSVG = 600, larguraSVG = 2000;var	margin = {top: 10, right: 20, bottom:30, left: 100}, // para descolar a vis das bordas do graficolarguraVis = larguraSVG - margin.</description>
     </item>
     
     <item>
       <title>Volume do Açude de Boqueirão vem crescendo.</title>
-      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/terceiro-post/</link>
+      <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/terceiro-post/</link>
       <pubDate>Wed, 15 Nov 2017 15:31:06 -0300</pubDate>
       
-      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/terceiro-post/</guid>
+      <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/terceiro-post/</guid>
       <description>O açude de Boqueirão, no Agreste da Paraíba, atingiu o seu volume morto em 18 de junho de 2016 ao atingir a marca de 8,22%, segundo o G1. Após décadas de espera, a transposição das águas do Rio São Franscisco chegou finalmente ao açude em abril de 2017, trazendo esperança aos que dele dependem. Lentamente o volume do açude está subindo, porém em alguns períodos, como final de agosto, a vazão de saída é maior que a vazão de entrada da água.</description>
     </item>
     
     <item>
       <title>São João de Campina Grande não é o responsável pela seca do Açude.</title>
-      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/segundo-post/</link>
+      <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/segundo-post/</link>
       <pubDate>Tue, 14 Nov 2017 15:30:59 -0300</pubDate>
       
-      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/segundo-post/</guid>
+      <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/segundo-post/</guid>
       <description>Em períodos de racionamento de água na cidade de Campina Grande é comum ver as pessoas preocupadas com a chegada de milhares de turistas no período junino e consequentemente o aumento no consumo da água. Porém, os dados mostram que o açude em nenhum ano no mês junino, desde 1990, atingiu o volume mínimo do ano. Ou seja, o Maior São João do Mundo não prejudica significativamente o volume das águas do açude, não tão quanto a má administração do mesmo e a própria evaporação, influenciada pelo clima do semiárido.</description>
     </item>
     
     <item>
       <title>Quando o Açude estiver cheio, se prepare...</title>
-      <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/primeiro-post/</link>
+      <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/primeiro-post/</link>
       <pubDate>Mon, 13 Nov 2017 21:14:36 -0300</pubDate>
       
-      <guid>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/post/primeiro-post/</guid>
+      <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/primeiro-post/</guid>
       <description>&amp;hellip; não para ir comemorar na &amp;ldquo;sangria&amp;rdquo;, mas para o período de seca no açude que vem logo em seguida. Dê uma olhada no gráfico abaixo nos períodos em que o açude atingiu o seu volume máximo: 1995, 2004, 2008, 2012. Perceba que, após um curto período de tempo, cerca de 2 anos, o volume do açude começa a cair bruscamente. Péssima administração das águas é um fator gravíssimo sim, mas o primeiro responsável por esta desagradável situação são os consumidores.</description>
     </item>
     

@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Visualização da Informação</title>
-    <link>https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/categories/</link>
+    <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/categories/</link>
     <description>Recent content in Categories on Visualização da Informação</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 2017, Veruska Santos</copyright>
     
-	<atom:link href="https://veruskasantos.github.io/VisualizacaoAcudeBoqueirao/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://veruskasantos.github.io/VisualizacaoDaInformacao/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
