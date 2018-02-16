@@ -31,7 +31,7 @@
         <div class="wrapper">
             
                 <div class="top-nav">
-                    <img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.png">
+                    <img src="https://veruskasantos.github.io/VisualizacaoDaInformacao/">
                     <h3><a href="https://veruskasantos.github.io/VisualizacaoDaInformacao/about/" rel="me">Visualização da Informação</a></h3>
                     <text>·</text>
                     <a href="https://veruskasantos.github.io/VisualizacaoDaInformacao/">Home</a>
@@ -137,7 +137,7 @@
                                 <th><hr class="playground-line"></th>
                                 <th style="width: 104px;">
                                     <div class="playground-date">
-                                        <h3>15</h3></br>JANUARY
+                                        <h3>15</h3></br>FEBRUARY
                                     </div>
                                 </th>
                                 <th><hr class="playground-line"></th>
@@ -149,71 +149,140 @@
                     O Açude Velho,
 
 <!DOCTYPE html>
-<meta charset="utf-8">
+<html lang="pt-br">
 
-<style>
+  <head>
+    <meta charset="utf-8">
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+      <script src="https://d3js.org/topojson.v2.min.js"></script>
+  </head>
 
-</style>
+  <body>
+    <div class="container">
 
-<svg width="400" height="300"></svg>
+      <div class="row">
+        <img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.png" alt="Mapa Feminino">
+      </div>
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/topojson.v2.min.js"></script>
+      <div class="row" id="legendaFeminina"></div>
+      <div class="row">
+        <svg width="400" height="300"></svg>
 
-<script type="text/javascript">
-"use strict"
+  <script type="text/javascript">
+  "use strict"
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+  var svg = d3.select('#legendaFeminina').append("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
 
-var x = d3.scaleLinear()
-    .domain([0, 6])
-    .rangeRound([100, 360]);
+  var x = d3.scaleLinear()
+      .domain([0, 6])
+      .rangeRound([100, 360]);
 
-var color = d3.scaleThreshold()
-    .domain(d3.range(1, 6))
-    .range(d3.schemeRdPu[6]);
+  var color = d3.scaleThreshold()
+      .domain(d3.range(1, 6))
+      .range(d3.schemeRdPu[6]);
 
-var g = svg.append("g")
-    .attr("class", "key")
-    .attr("transform", "translate(0,40)");
+  var g = svg.append("g")
+      .attr("class", "key")
+      .attr("transform", "translate(0,40)");
 
-g.selectAll("rect")
-  .data(color.range().map(function(d) {
-      d = color.invertExtent(d);
-      if (d[0] == null) d[0] = x.domain()[0];
-      if (d[1] == null) d[1] = x.domain()[1];
-      return d;
-    }))
-  .enter().append("rect")
-    .attr("height", 8)
-    .attr("x", function(d) { return x(d[0]); })
-    .attr("width", function(d) { return x(d[1]) - x(d[0]); })
-    .attr("fill", function(d) { return color(d[0]); });
+  g.selectAll("rect")
+    .data(color.range().map(function(d) {
+        d = color.invertExtent(d);
+        if (d[0] == null) d[0] = x.domain()[0];
+        if (d[1] == null) d[1] = x.domain()[1];
+        return d;
+      }))
+    .enter().append("rect")
+      .attr("height", 8)
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+      .attr("fill", function(d) { return color(d[0]); });
 
-g.append("text")
-    .attr("class", "caption")
-    .attr("x", x.range()[0])
-    .attr("y", -6)
-    .attr("fill", "#000")
-    .attr("text-anchor", "start")
-    .attr("font-weight", "bold")
-    .text("Legenda");
+  g.append("text")
+      .attr("class", "caption")
+      .attr("x", x.range()[0])
+      .attr("y", -6)
+      .attr("fill", "#000")
+      .attr("text-anchor", "start")
+      .attr("font-weight", "bold")
+      .text("Legenda");
 
-g.call(d3.axisBottom(x)
-    .tickSize(13)
-    .tickFormat(function(x, i) { return i ? x : x; })
-    .tickValues(color.domain()))
-  .select(".domain")
-    .remove();
-</script>
+  g.call(d3.axisBottom(x)
+      .tickSize(13)
+      .tickFormat(function(x, i) { return i ? x : x; })
+      .tickValues(color.domain()))
+    .select(".domain")
+      .remove();
+  </script>
 
-<img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.PNG" alt="Mapa Feminino">
+      </div>
 
-<img src="/VisualizacaoDaInformacao/dados/mapaParaibaMasculino.png" alt="Mapa Masculino">
+      <div class="row">
+         
+         <img src="/VisualizacaoDaInformacao/dados/mapaParaibaMasculino.png" alt="Mapa Masculino">
+      </div>
 
+<div class="row" id="legendaMasculina"></div>
+      <div class="row">
+         <svg width="400" height="300"></svg>
+
+  <script type="text/javascript">
+  "use strict"
+
+  var svg = d3.select('#legendaMasculina').append("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
+
+  var x = d3.scaleLinear()
+      .domain([0, 6])
+      .rangeRound([100, 360]);
+
+  var color = d3.scaleThreshold()
+      .domain(d3.range(1, 6))
+      .range(d3.schemeYlGnBu[6]);
+
+  var g = svg.append("g")
+      .attr("class", "key")
+      .attr("transform", "translate(0,40)");
+
+  g.selectAll("rect")
+    .data(color.range().map(function(d) {
+        d = color.invertExtent(d);
+        if (d[0] == null) d[0] = x.domain()[0];
+        if (d[1] == null) d[1] = x.domain()[1];
+        return d;
+      }))
+    .enter().append("rect")
+      .attr("height", 8)
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+      .attr("fill", function(d) { return color(d[0]); });
+
+  g.append("text")
+      .attr("class", "caption")
+      .attr("x", x.range()[0])
+      .attr("y", -6)
+      .attr("fill", "#000")
+      .attr("text-anchor", "start")
+      .attr("font-weight", "bold")
+      .text("Legenda");
+
+  g.call(d3.axisBottom(x)
+      .tickSize(13)
+      .tickFormat(function(x, i) { return i ? x : x; })
+      .tickValues(color.domain()))
+    .select(".domain")
+      .remove();
+  </script>
+      </div>
+      
+    </div>
+
+</body>
+</html>
                 </div>
             
                 <div class="top-nav">
@@ -693,7 +762,7 @@ A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres
     <div class="row">
     
     </div>
-    <div class="t" id="chart">
+    <div class="row mychart" id="chart">
     </div>
   </div>
 
@@ -714,10 +783,7 @@ A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres
       var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
         .append('svg')
           .attr('width', larguraVis + margin.left + margin.right)
-          .attr('height', alturaVis + margin.top + margin.bottom);
-
-
-          grafico.append('g') // para entender o <g> v� em x03-detalhes-svg.html
+          .attr('height', alturaVis + margin.top + margin.bottom).append('g') // para entender o <g> v� em x03-detalhes-svg.html
           .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
         
 
@@ -773,37 +839,7 @@ A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres
           .attr('r', turnoTardeMulherPedestre)
           .attr('cx', x(t[0]))
           .attr('cy', 150)
-          .style('fill', corTarde)
-          .on("mouseover", handleMouseOver)
-          .on("mouseout", handleMouseOut);
-
-
-        // Create Event Handlers for mouse
-      function handleMouseOver(d, i) {  // Add interactivity
-            
-            // Use D3 to select element, change color and size
-           /*d3.select(this).attr({
-              fill: "red"
-            });*/
-
-            // Specify where to put label of text
-            grafico.append("text").attr({
-               //id: "t" + 20 + "-" + 20 + "-" + i,  // Create an id for text so we can select it later for removing on mouseout
-                x: function() { return 20; },
-                y: function() { return 20; }
-            })
-            .text(function() {
-              return 29;  // Value of the text
-            });
-            
-          }
-
-      function handleMouseOut(d, i) {
-            // Use D3 to select element, change color back to normal
-            d3.select(this).attr({
-              fill: "yellow"
-            });
-          }
+          .style('fill', corTarde);
 
 //manhã mulher pedestre
     grafico.selectAll('g')

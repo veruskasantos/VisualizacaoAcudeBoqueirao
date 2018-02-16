@@ -205,7 +205,7 @@ A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres
     <div class="row">
     
     </div>
-    <div class="t" id="chart">
+    <div class="row mychart" id="chart">
     </div>
   </div>
 
@@ -226,10 +226,7 @@ A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres
       var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
         .append('svg')
           .attr('width', larguraVis + margin.left + margin.right)
-          .attr('height', alturaVis + margin.top + margin.bottom);
-
-
-          grafico.append('g') // para entender o <g> v� em x03-detalhes-svg.html
+          .attr('height', alturaVis + margin.top + margin.bottom).append('g') // para entender o <g> v� em x03-detalhes-svg.html
           .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
         
 
@@ -285,37 +282,7 @@ A quantidade de ciclistas é bem inferior em relação a quantidade de pedestres
           .attr('r', turnoTardeMulherPedestre)
           .attr('cx', x(t[0]))
           .attr('cy', 150)
-          .style('fill', corTarde)
-          .on("mouseover", handleMouseOver)
-          .on("mouseout", handleMouseOut);
-
-
-        // Create Event Handlers for mouse
-      function handleMouseOver(d, i) {  // Add interactivity
-            
-            // Use D3 to select element, change color and size
-           /*d3.select(this).attr({
-              fill: "red"
-            });*/
-
-            // Specify where to put label of text
-            grafico.append("text").attr({
-               //id: "t" + 20 + "-" + 20 + "-" + i,  // Create an id for text so we can select it later for removing on mouseout
-                x: function() { return 20; },
-                y: function() { return 20; }
-            })
-            .text(function() {
-              return 29;  // Value of the text
-            });
-            
-          }
-
-      function handleMouseOut(d, i) {
-            // Use D3 to select element, change color back to normal
-            d3.select(this).attr({
-              fill: "yellow"
-            });
-          }
+          .style('fill', corTarde);
 
 //manhã mulher pedestre
     grafico.selectAll('g')

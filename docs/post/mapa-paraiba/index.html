@@ -6,12 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Teste -  - Visualização da Informação</title>
+<title>Na Paraíba, a responsabilidade feminina chega primeiro -  - Visualização da Informação</title>
 <meta name="author" content="">
 <meta name="description" content=" - Quando o açude estiver cheio, se prepare...">
 <meta name="keywords" content="">
 
-<meta property="og:title" content="Teste -  - Visualização da Informação">
+<meta property="og:title" content="Na Paraíba, a responsabilidade feminina chega primeiro -  - Visualização da Informação">
 <meta property="og:description" content=" - Quando o açude estiver cheio, se prepare...">
 
 <!-- Site Icon -->
@@ -137,15 +137,15 @@
         	<div class="article-header-container lin-gradient">
                 <div class="article-header">
                     <div class="publish-date" style="margin-top: 10px;">
-                        <h3>15</h3></br>JANUARY
+                        <h3>15</h3></br>FEBRUARY
                     </div>
-                    <h1>Teste</h1>
+                    <h1>Na Paraíba, a responsabilidade feminina chega primeiro</h1>
                 </div>
         	</div>
             <div class="article-meta-inf">
                 <a href="https://veruskasantos.github.io/VisualizacaoDaInformacao/about/" rel="me">by  </a>
-                <text> &nbsp; · &nbsp; 2018-01-15</text>
-                <text> &nbsp; · &nbsp; 1 minutes reading time</text>
+                <text> &nbsp; · &nbsp; 2018-02-15</text>
+                <text> &nbsp; · &nbsp; 2 minutes reading time</text>
                 <a href="javascript:void(0);"><svg id="alignLeft"
 	 xmlns="http://www.w3.org/2000/svg" 
 	 version="1.1" 
@@ -185,71 +185,140 @@
         			O Açude Velho,
 
 <!DOCTYPE html>
-<meta charset="utf-8">
+<html lang="pt-br">
 
-<style>
+  <head>
+    <meta charset="utf-8">
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+      <script src="https://d3js.org/topojson.v2.min.js"></script>
+  </head>
 
-</style>
+  <body>
+    <div class="container">
 
-<svg width="400" height="300"></svg>
+      <div class="row">
+        <img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.png" alt="Mapa Feminino">
+      </div>
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/topojson.v2.min.js"></script>
+      <div class="row" id="legendaFeminina"></div>
+      <div class="row">
+        <svg width="400" height="300"></svg>
 
-<script type="text/javascript">
-"use strict"
+  <script type="text/javascript">
+  "use strict"
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+  var svg = d3.select('#legendaFeminina').append("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
 
-var x = d3.scaleLinear()
-    .domain([0, 6])
-    .rangeRound([100, 360]);
+  var x = d3.scaleLinear()
+      .domain([0, 6])
+      .rangeRound([100, 360]);
 
-var color = d3.scaleThreshold()
-    .domain(d3.range(1, 6))
-    .range(d3.schemeRdPu[6]);
+  var color = d3.scaleThreshold()
+      .domain(d3.range(1, 6))
+      .range(d3.schemeRdPu[6]);
 
-var g = svg.append("g")
-    .attr("class", "key")
-    .attr("transform", "translate(0,40)");
+  var g = svg.append("g")
+      .attr("class", "key")
+      .attr("transform", "translate(0,40)");
 
-g.selectAll("rect")
-  .data(color.range().map(function(d) {
-      d = color.invertExtent(d);
-      if (d[0] == null) d[0] = x.domain()[0];
-      if (d[1] == null) d[1] = x.domain()[1];
-      return d;
-    }))
-  .enter().append("rect")
-    .attr("height", 8)
-    .attr("x", function(d) { return x(d[0]); })
-    .attr("width", function(d) { return x(d[1]) - x(d[0]); })
-    .attr("fill", function(d) { return color(d[0]); });
+  g.selectAll("rect")
+    .data(color.range().map(function(d) {
+        d = color.invertExtent(d);
+        if (d[0] == null) d[0] = x.domain()[0];
+        if (d[1] == null) d[1] = x.domain()[1];
+        return d;
+      }))
+    .enter().append("rect")
+      .attr("height", 8)
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+      .attr("fill", function(d) { return color(d[0]); });
 
-g.append("text")
-    .attr("class", "caption")
-    .attr("x", x.range()[0])
-    .attr("y", -6)
-    .attr("fill", "#000")
-    .attr("text-anchor", "start")
-    .attr("font-weight", "bold")
-    .text("Legenda");
+  g.append("text")
+      .attr("class", "caption")
+      .attr("x", x.range()[0])
+      .attr("y", -6)
+      .attr("fill", "#000")
+      .attr("text-anchor", "start")
+      .attr("font-weight", "bold")
+      .text("Legenda");
 
-g.call(d3.axisBottom(x)
-    .tickSize(13)
-    .tickFormat(function(x, i) { return i ? x : x; })
-    .tickValues(color.domain()))
-  .select(".domain")
-    .remove();
-</script>
+  g.call(d3.axisBottom(x)
+      .tickSize(13)
+      .tickFormat(function(x, i) { return i ? x : x; })
+      .tickValues(color.domain()))
+    .select(".domain")
+      .remove();
+  </script>
 
-<img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.PNG" alt="Mapa Feminino">
+      </div>
 
-<img src="/VisualizacaoDaInformacao/dados/mapaParaibaMasculino.png" alt="Mapa Masculino">
+      <div class="row">
+         
+         <img src="/VisualizacaoDaInformacao/dados/mapaParaibaMasculino.png" alt="Mapa Masculino">
+      </div>
 
+<div class="row" id="legendaMasculina"></div>
+      <div class="row">
+         <svg width="400" height="300"></svg>
+
+  <script type="text/javascript">
+  "use strict"
+
+  var svg = d3.select('#legendaMasculina').append("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
+
+  var x = d3.scaleLinear()
+      .domain([0, 6])
+      .rangeRound([100, 360]);
+
+  var color = d3.scaleThreshold()
+      .domain(d3.range(1, 6))
+      .range(d3.schemeYlGnBu[6]);
+
+  var g = svg.append("g")
+      .attr("class", "key")
+      .attr("transform", "translate(0,40)");
+
+  g.selectAll("rect")
+    .data(color.range().map(function(d) {
+        d = color.invertExtent(d);
+        if (d[0] == null) d[0] = x.domain()[0];
+        if (d[1] == null) d[1] = x.domain()[1];
+        return d;
+      }))
+    .enter().append("rect")
+      .attr("height", 8)
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+      .attr("fill", function(d) { return color(d[0]); });
+
+  g.append("text")
+      .attr("class", "caption")
+      .attr("x", x.range()[0])
+      .attr("y", -6)
+      .attr("fill", "#000")
+      .attr("text-anchor", "start")
+      .attr("font-weight", "bold")
+      .text("Legenda");
+
+  g.call(d3.axisBottom(x)
+      .tickSize(13)
+      .tickFormat(function(x, i) { return i ? x : x; })
+      .tickValues(color.domain()))
+    .select(".domain")
+      .remove();
+  </script>
+      </div>
+      
+    </div>
+
+</body>
+</html>
         	</div>
 
             <footer class="footer-container lin-gradient-revert">

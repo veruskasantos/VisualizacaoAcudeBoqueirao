@@ -30,7 +30,7 @@
         <div class="wrapper">
             <div class="start-screen">
                 <div class="mobile">
-                    <div><img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.png"></div>
+                    <div><img src="https://veruskasantos.github.io/VisualizacaoDaInformacao/"></div>
                     <div><a href="https://veruskasantos.github.io/VisualizacaoDaInformacao/post/terceiro-post/">Crescimento</a></div>
                     <div><a href="https://veruskasantos.github.io/VisualizacaoDaInformacao/about/" rel="me">São João</a></div>
                     <div><a href="https://veruskasantos.github.io/VisualizacaoDaInformacao/" rel="me">Cheio</a></div>
@@ -170,43 +170,14 @@
             
                 <div class="timeline-post">
                     <div class="publish-date">
-                        </br></br><h3>15</h3></br>JANUARY
+                        </br></br><h3>15</h3></br>FEBRUARY
                     </div>
 
                     <div class="timeline-post-body">
-                            <a href="https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-paraiba/"><h3>Teste</h3></a>
+                            <a href="https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-paraiba/"><h3>Na Paraíba, a responsabilidade feminina chega primeiro</h3></a>
                         <div class="timeline-post-description">
                             <p>
-                                O Açude Velho,
-
-
-
-
-
-
-"use strict"
-var svg = d3.select("svg"),
-width = +svg.attr("width"),
-height = +svg.attr("height");
-var x = d3.scaleLinear()
-.domain([0, 6])
-.rangeRound([100, 360]);
-var color = d3.scaleThreshold()
-.domain(d3.range(1, 6))
-.range(d3.schemeRdPu[6]);
-var g = svg.append("g")
-.attr("class", "key")
-.attr("transform", "translate(0,40)");
-g.selectAll("rect")
-.data(color.range().map(function(d) {
-d = color.invertExtent(d);
-if (d[0] == null) d[0] = x.domain()[0];
-if (d[1] == null) d[1] = x.domain()[1];
-return d;
-}))
-.enter().append("rect")
-.attr("height", 8)
-.
+                                O Açude Velho,"use strict"var svg = d3.select('#legendaFeminina').append("svg"),width = +svg.attr("width"),height = +svg.attr("height");var x = d3.scaleLinear().domain([0, 6]).rangeRound([100, 360]);var color = d3.scaleThreshold().domain(d3.range(1, 6)).range(d3.schemeRdPu[6]);var g = svg.append("g").attr("class", "key").attr("transform", "translate(0,40)");g.selectAll("rect").data(color.range().map(function(d) {d = color.invertExtent(d);if (d[0] == null) d[0] = x.domain()[0];if (d[1] == null) d[1] = x.domain()[1];return d;})).
                             </p>
                             <a href="https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-paraiba/"><p class="timeline-post-read-more"><a href="https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-paraiba/">Read more &rarr;</a></p>
                         </div> 
