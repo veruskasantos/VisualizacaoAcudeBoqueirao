@@ -24,6 +24,10 @@ Dando continuidade às análises sobre os dados de movimentação no Açude Velh
 
 	<style>
 
+    rect:hover {
+      fill: red;
+    }
+
     .mychart text {
       font: 14px sans-serif;
       text-anchor: left;
@@ -75,18 +79,6 @@ Dando continuidade às análises sobre os dados de movimentação no Açude Velh
        var turnoTardePedestres =  turnoTarde.map(e => parseInt(e.total_pedestres)).reduce((a,e) => (a + e)) / peso;
        var turnoNoitePedestres =  turnoNoite.map(e => parseInt(e.total_pedestres)).reduce((a,e) => (a + e)) / peso;
 
-      console.log(turnoManhaMotorizados);
-      console.log(turnoTardeMotorizados);
-      console.log(turnoNoiteMotorizados);
-
-      console.log(turnoManhaCiclistas);
-      console.log(turnoTardeCiclistas);
-      console.log(turnoNoiteCiclistas);
-
-      console.log(turnoManhaPedestres);
-      console.log(turnoTardePedestres);
-      console.log(turnoNoitePedestres);
-
 	  var maxAltura = 500;
 
       var x = d3.scaleBand()
@@ -116,6 +108,7 @@ Dando continuidade às análises sobre os dados de movimentação no Açude Velh
                   .attr('y', y(turnoManhaMotorizados))
                   .attr('height', turnoManhaMotorizados)
                   .style('fill', corMotorizados);
+                
 
       grafico.selectAll('g')
               .data(dados)

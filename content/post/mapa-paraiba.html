@@ -1,0 +1,143 @@
+---
+title: "Na Paraíba, a responsabilidade feminina chega primeiro"
+date: 2018-02-15T17:17:10-03:00
+draft: false
+---
+
+  O Açude Velho,
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+      <script src="https://d3js.org/topojson.v2.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.png" alt="Mapa Feminino">
+      </div>
+
+      <div class="row" id="legendaFeminina"></div>
+      <div class="row">
+        <svg width="400" height="300"></svg>
+
+  <script type="text/javascript">
+  "use strict"
+
+  var svg = d3.select('#legendaFeminina').append("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
+
+  var x = d3.scaleLinear()
+      .domain([0, 6])
+      .rangeRound([100, 360]);
+
+  var color = d3.scaleThreshold()
+      .domain(d3.range(1, 6))
+      .range(d3.schemeRdPu[6]);
+
+  var g = svg.append("g")
+      .attr("class", "key")
+      .attr("transform", "translate(0,40)");
+
+  g.selectAll("rect")
+    .data(color.range().map(function(d) {
+        d = color.invertExtent(d);
+        if (d[0] == null) d[0] = x.domain()[0];
+        if (d[1] == null) d[1] = x.domain()[1];
+        return d;
+      }))
+    .enter().append("rect")
+      .attr("height", 8)
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+      .attr("fill", function(d) { return color(d[0]); });
+
+  g.append("text")
+      .attr("class", "caption")
+      .attr("x", x.range()[0])
+      .attr("y", -6)
+      .attr("fill", "#000")
+      .attr("text-anchor", "start")
+      .attr("font-weight", "bold")
+      .text("Legenda");
+
+  g.call(d3.axisBottom(x)
+      .tickSize(13)
+      .tickFormat(function(x, i) { return i ? x : x; })
+      .tickValues(color.domain()))
+    .select(".domain")
+      .remove();
+  </script>
+
+      </div>
+
+      <div class="row">
+         
+         <img src="/VisualizacaoDaInformacao/dados/mapaParaibaMasculino.png" alt="Mapa Masculino">
+      </div>
+
+<div class="row" id="legendaMasculina"></div>
+      <div class="row">
+         <svg width="400" height="300"></svg>
+
+  <script type="text/javascript">
+  "use strict"
+
+  var svg = d3.select('#legendaMasculina').append("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height");
+
+  var x = d3.scaleLinear()
+      .domain([0, 6])
+      .rangeRound([100, 360]);
+
+  var color = d3.scaleThreshold()
+      .domain(d3.range(1, 6))
+      .range(d3.schemeYlGnBu[6]);
+
+  var g = svg.append("g")
+      .attr("class", "key")
+      .attr("transform", "translate(0,40)");
+
+  g.selectAll("rect")
+    .data(color.range().map(function(d) {
+        d = color.invertExtent(d);
+        if (d[0] == null) d[0] = x.domain()[0];
+        if (d[1] == null) d[1] = x.domain()[1];
+        return d;
+      }))
+    .enter().append("rect")
+      .attr("height", 8)
+      .attr("x", function(d) { return x(d[0]); })
+      .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+      .attr("fill", function(d) { return color(d[0]); });
+
+  g.append("text")
+      .attr("class", "caption")
+      .attr("x", x.range()[0])
+      .attr("y", -6)
+      .attr("fill", "#000")
+      .attr("text-anchor", "start")
+      .attr("font-weight", "bold")
+      .text("Legenda");
+
+  g.call(d3.axisBottom(x)
+      .tickSize(13)
+      .tickFormat(function(x, i) { return i ? x : x; })
+      .tickValues(color.domain()))
+    .select(".domain")
+      .remove();
+  </script>
+      </div>
+      
+    </div>
+
+</body>
+</html>
