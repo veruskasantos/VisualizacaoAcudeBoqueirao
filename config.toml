@@ -5,9 +5,9 @@ baseurl = "https://veruskasantos.github.io/VisualizacaoDaInformacao/"
 title = "Visualização da Informação"
 theme = "Shapez-Theme"
 publishDir = "docs"
-copyright = "Copyright (c) 2017, Veruska Santos"
+copyright = "Copyright (c) 2017"
 [author]
-    name = ""
+    name = "Veruska Borges Santos"
     
 languageCode = "en-US"
 MetaDataFormat = "toml"
@@ -21,8 +21,8 @@ googleAnalytics = ""
     # Homepage Start-Screen, variables can be left empty, links dont start with /
     title_l1 = ""
     title_l2 = "Campina Grande - PB"
-    subtitle_l1 = "Açude Epitácio Pessoa"
-    subtitle_l2 = "Açude Velho"
+    subtitle_l1 = "Portfólio para análise de dados"
+    subtitle_l2 = ""
     subtitle_l3 = ""
     subtitle_link = ""
 
@@ -30,8 +30,10 @@ googleAnalytics = ""
 
     # Enter links for the buttons (button one has the house sign), shouldn't be left empty
     button_1 = ""
-    button_2 = "post/terceiro-post/"
+    button_2 = "post/mapa-paraiba/"
     button_3 = "about/"
 
+    logo = "dados/mapaParaibaFemininoLogo.png"
+    logo_start_screen_rotation = "0"
     paginate = 2
     keywords = "hugo, blog, Shapez, SVG, design"
