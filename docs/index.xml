@@ -17,7 +17,7 @@
       <pubDate>Thu, 15 Feb 2018 17:17:10 -0300</pubDate>
       
       <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-paraiba/</guid>
-      <description>O Açude Velho,&#34;use strict&#34;var svg = d3.select(&#39;#legendaFeminina&#39;).append(&#34;svg&#34;),width = +svg.attr(&#34;width&#34;),height = +svg.attr(&#34;height&#34;);var x = d3.scaleLinear().domain([0, 6]).rangeRound([100, 360]);var color = d3.scaleThreshold().domain(d3.range(1, 6)).range(d3.schemeRdPu[6]);var g = svg.append(&#34;g&#34;).attr(&#34;class&#34;, &#34;key&#34;).attr(&#34;transform&#34;, &#34;translate(0,40)&#34;);g.selectAll(&#34;rect&#34;).data(color.range().map(function(d) {d = color.invertExtent(d);if (d[0] == null) d[0] = x.domain()[0];if (d[1] == null) d[1] = x.domain()[1];return d;})).</description>
+      <description>Que as mulheres vêem ganhando seu espaço na sociedade isto é fato! Mais liberdade, mais proteção, mais independência e mais oportunidades são as nossas conquistas nos últimos anos, decorrentes de movimentos, lutas e conscientação da sociedade em geral. Porém, os dados aqui exibidos não são de vitória, mas de exploração infantil, com destaque para as meninas.Através dos dados do Censo do IBGE no ano de 2010 sobre a Paraíba, descobrimos que ainda existem crianças que são as responsáveis únicas pela manutenção financeira da família.</description>
     </item>
     
     <item>

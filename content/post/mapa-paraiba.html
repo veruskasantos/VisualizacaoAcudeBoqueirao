@@ -4,140 +4,153 @@ date: 2018-02-15T17:17:10-03:00
 draft: false
 ---
 
-  O Açude Velho,
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
-  <head>
-    <meta charset="utf-8">
-      <script src="https://d3js.org/d3.v4.min.js"></script>
-      <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-      <script src="https://d3js.org/topojson.v2.min.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+</head>
 
-  <body>
-    <div class="container">
+<body>
+  <div class="container">
 
-      <div class="row">
-        <img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.png" alt="Mapa Feminino">
-      </div>
+    <div class="row"> 
+      <p>
+        Que as mulheres vêem ganhando seu espaço na sociedade isto é fato! Mais liberdade, mais proteção, mais independência e mais oportunidades são as nossas conquistas nos últimos anos, decorrentes de movimentos, lutas e conscientação da sociedade em geral. Porém, os dados aqui exibidos não são de vitória, mas de exploração infantil, com destaque para as meninas.
+      </p>
 
-      <div class="row" id="legendaFeminina"></div>
-      <div class="row">
-        <svg width="400" height="300"></svg>
+      <p>
+        Através dos <a href="https://mapas.ibge.gov.br/bases-e-referenciais/bases-cartograficas/malhas-digitais.html">dados</a> do Censo do IBGE no ano de 2010 sobre a Paraíba, descobrimos que ainda existem crianças que são as responsáveis únicas pela manutenção financeira da família. Os mapas abaixo mostram quais os municípios paraibanos onde residem famílias sustentadas por crianças entre 10 e 14 anos de vida.
+      </p>
 
-  <script type="text/javascript">
-  "use strict"
+      <p>
+        O primeiro mapa, logo abaixo, exibe os municípios onde as meninas são as responsáveis por sustentar a casa. A concentração de tais ocorrências está no agreste paraibano, apesar de haver ocorrência em quase todo o estado. As cores indicam a quantidade de casas por município, sustentadas por menina, podendo chegar até 6.
+      </p>
+    </div>
 
-  var svg = d3.select('#legendaFeminina').append("svg"),
+    <div class="row">
+      <img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.png" alt="Mapa Feminino">
+    </div>
+
+    <div class="row" id="legendaFeminina"></div>
+
+    <script type="text/javascript">
+      "use strict"
+
+      var svg = d3.select('#legendaFeminina').append("svg"),
       width = +svg.attr("width"),
       height = +svg.attr("height");
 
-  var x = d3.scaleLinear()
+      var x = d3.scaleLinear()
       .domain([0, 6])
-      .rangeRound([100, 360]);
+      .rangeRound([50, 360]);
 
-  var color = d3.scaleThreshold()
+      var color = d3.scaleThreshold()
       .domain(d3.range(1, 6))
       .range(d3.schemeRdPu[6]);
 
-  var g = svg.append("g")
+      var g = svg.append("g")
       .attr("class", "key")
       .attr("transform", "translate(0,40)");
 
-  g.selectAll("rect")
-    .data(color.range().map(function(d) {
+      g.selectAll("rect")
+      .data(color.range().map(function(d) {
         d = color.invertExtent(d);
         if (d[0] == null) d[0] = x.domain()[0];
         if (d[1] == null) d[1] = x.domain()[1];
         return d;
       }))
-    .enter().append("rect")
+      .enter().append("rect")
       .attr("height", 8)
       .attr("x", function(d) { return x(d[0]); })
       .attr("width", function(d) { return x(d[1]) - x(d[0]); })
       .attr("fill", function(d) { return color(d[0]); });
 
-  g.append("text")
+      g.append("text")
       .attr("class", "caption")
       .attr("x", x.range()[0])
       .attr("y", -6)
       .attr("fill", "#000")
       .attr("text-anchor", "start")
       .attr("font-weight", "bold")
-      .text("Legenda");
+      .attr("font-size", 12)
+      .text("Casas por município");
 
-  g.call(d3.axisBottom(x)
-      .tickSize(13)
-      .tickFormat(function(x, i) { return i ? x : x; })
-      .tickValues(color.domain()))
-    .select(".domain")
+      g.call(d3.axisBottom(x)
+        .tickSize(13)
+        .tickFormat(function(x, i) { return i ? x : x; })
+        .tickValues(color.domain()))
+      .select(".domain")
       .remove();
-  </script>
+    </script>
 
-      </div>
-
-      <div class="row">
-         
-         <img src="/VisualizacaoDaInformacao/dados/mapaParaibaMasculino.png" alt="Mapa Masculino">
-      </div>
-
-<div class="row" id="legendaMasculina"></div>
-      <div class="row">
-         <svg width="400" height="300"></svg>
-
-  <script type="text/javascript">
-  "use strict"
-
-  var svg = d3.select('#legendaMasculina').append("svg"),
-      width = +svg.attr("width"),
-      height = +svg.attr("height");
-
-  var x = d3.scaleLinear()
-      .domain([0, 6])
-      .rangeRound([100, 360]);
-
-  var color = d3.scaleThreshold()
-      .domain(d3.range(1, 6))
-      .range(d3.schemeYlGnBu[6]);
-
-  var g = svg.append("g")
-      .attr("class", "key")
-      .attr("transform", "translate(0,40)");
-
-  g.selectAll("rect")
-    .data(color.range().map(function(d) {
-        d = color.invertExtent(d);
-        if (d[0] == null) d[0] = x.domain()[0];
-        if (d[1] == null) d[1] = x.domain()[1];
-        return d;
-      }))
-    .enter().append("rect")
-      .attr("height", 8)
-      .attr("x", function(d) { return x(d[0]); })
-      .attr("width", function(d) { return x(d[1]) - x(d[0]); })
-      .attr("fill", function(d) { return color(d[0]); });
-
-  g.append("text")
-      .attr("class", "caption")
-      .attr("x", x.range()[0])
-      .attr("y", -6)
-      .attr("fill", "#000")
-      .attr("text-anchor", "start")
-      .attr("font-weight", "bold")
-      .text("Legenda");
-
-  g.call(d3.axisBottom(x)
-      .tickSize(13)
-      .tickFormat(function(x, i) { return i ? x : x; })
-      .tickValues(color.domain()))
-    .select(".domain")
-      .remove();
-  </script>
-      </div>
-      
+    <div class="row">
+      <p>
+        Em contrapartida, o mapa azul exibe os municípios onde os jovens meninos são os responsáveis por sustentar a casa. 
+        Perceba que há mais ocorrências no mapa rosa do que no mapa azul, mesmo ambos estando na mesma escala, indicando que, na Paraiba, há mais meninas de 10 a 14 anos responsáveis pela casa do que meninos na mesma idade. Não há informações se a fonte de renda é trabalho infantil, pensão, desvios financeiros ou outras coisas, a única certeza é a dimensão da responsabilidade que já têm estas crianças. 
+      </p>
     </div>
+
+    <div class="row">
+     <img src="/VisualizacaoDaInformacao/dados/mapaParaibaMasculino.png" alt="Mapa Masculino">
+   </div>
+
+   <div class="row" id="legendaMasculina"></div>
+
+   <script type="text/javascript">
+    "use strict"
+
+    var svg = d3.select('#legendaMasculina').append("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+    var x = d3.scaleLinear()
+    .domain([0, 7])
+    .rangeRound([50, 360]);
+
+    var color = d3.scaleThreshold()
+    .domain(d3.range(1, 7))
+    .range(d3.schemeYlGnBu[7]);
+
+    var g = svg.append("g")
+    .attr("class", "key")
+    .attr("transform", "translate(0,40)");
+
+    g.selectAll("rect")
+    .data(color.range().map(function(d) {
+      d = color.invertExtent(d);
+      if (d[0] == null) d[0] = x.domain()[0];
+      if (d[1] == null) d[1] = x.domain()[1];
+      return d;
+    }))
+    .enter().append("rect")
+    .attr("height", 8)
+    .attr("x", function(d) { return x(d[0]); })
+    .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+    .attr("fill", function(d) { return color(d[0]); });
+
+    g.append("text")
+    .attr("class", "caption")
+    .attr("x", x.range()[0])
+    .attr("y", -6)
+    .attr("fill", "#000")
+    .attr("text-anchor", "start")
+    .attr("font-weight", "bold")
+    .attr("font-size", 12)
+    .text("Casas por município");
+
+    g.call(d3.axisBottom(x)
+      .tickSize(13)
+      .tickFormat(function(x, i) { return i ? x : x; })
+      .tickValues(color.domain()))
+    .select(".domain")
+    .remove();
+  </script>
+
+</div>
 
 </body>
 </html>
