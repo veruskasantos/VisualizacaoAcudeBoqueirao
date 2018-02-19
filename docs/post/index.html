@@ -169,34 +169,32 @@
       </p>
 
       <p>
-        O primeiro mapa, logo abaixo, exibe os municípios onde as meninas são as responsáveis por sustentar a casa. A concentração de tais ocorrências está no agreste paraibano, apesar de haver ocorrência em quase todo o estado. As cores indicam a quantidade de casas por município, sustentadas por menina, podendo chegar até 6.
+        O primeiro mapa, logo abaixo, exibe os municípios onde as meninas são as responsáveis por sustentar a casa. A concentração de tais ocorrências está no agreste paraibano, apesar de haver ocorrência em quase todo o estado. Há registros de municípios com até 6 casas sustentadas por meninas. Os valores encontrados foram, então, divididos pela quantidade total de meninas alfabetizadas do munícipio, para melhor comparação.
       </p>
     </div>
 
     <div class="row">
-      <img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.PNG" alt="Mapa Feminino">
+      <img src="/VisualizacaoDaInformacao/dados/mapaParaibaFeminino.svg" alt="Mapa Feminino">
+      <svg id="cap1"></svg>
     </div>
-
-    <div class="row" id="legendaFeminina"></div>
 
     <script type="text/javascript">
       "use strict"
 
-      var svg = d3.select('#legendaFeminina').append("svg"),
-      width = +svg.attr("width"),
-      height = +svg.attr("height");
-
       var x = d3.scaleLinear()
-      .domain([0, 6])
+      .domain([0, 0.1e2])
       .rangeRound([50, 360]);
 
       var color = d3.scaleThreshold()
-      .domain(d3.range(1, 6))
-      .range(d3.schemeRdPu[6]);
+      .domain([0, 0.025e2, 0.05e2, 0.075e2, 0.1e2])
+      .range(d3.schemeRdPu[5]);
 
-      var g = svg.append("g")
-      .attr("class", "key")
-      .attr("transform", "translate(0,40)");
+      const svg1 = d3.select("#cap1")
+                  .style("width", "100%")
+                  .style("height", "auto");
+
+      const g = svg1.append("g")
+                  .attr("transform", "translate(10,40)");
 
       g.selectAll("rect")
       .data(color.range().map(function(d) {
@@ -219,11 +217,11 @@
       .attr("text-anchor", "start")
       .attr("font-weight", "bold")
       .attr("font-size", 12)
-      .text("Casas por município");
+      .text("Relação de ocorrência por meninas alfabetizadas");
 
       g.call(d3.axisBottom(x)
         .tickSize(13)
-        .tickFormat(function(x, i) { return i ? x : x; })
+        .tickFormat(function(x, i) { return x + "%"; })
         .tickValues(color.domain()))
       .select(".domain")
       .remove();
@@ -237,31 +235,28 @@
     </div>
 
     <div class="row">
-     <img src="/VisualizacaoDaInformacao/dados/mapaParaibaMasculino.png" alt="Mapa Masculino">
+     <img src="/VisualizacaoDaInformacao/dados/mapaParaibaMasculino.svg" alt="Mapa Masculino">
+     <svg id="cap2"></svg>
    </div>
-
-   <div class="row" id="legendaMasculina"></div>
 
    <script type="text/javascript">
     "use strict"
 
-    var svg = d3.select('#legendaMasculina').append("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
-
     var x = d3.scaleLinear()
-    .domain([0, 7])
+    .domain([0, 0.1e2])
     .rangeRound([50, 360]);
 
     var color = d3.scaleThreshold()
-    .domain(d3.range(1, 7))
-    .range(d3.schemeYlGnBu[7]);
+    .domain([0, 0.025e2, 0.05e2, 0.075e2, 0.1e2])
+    .range(d3.schemeYlGnBu[5]);
 
-    var g = svg.append("g")
-    .attr("class", "key")
-    .attr("transform", "translate(0,40)");
+    const svg2 = d3.select("#cap2")
+                  .style("width", "100%")
+                  .style("height", "auto");
+    const g2 = svg2.append("g")
+                  .attr("transform", "translate(10,40)");
 
-    g.selectAll("rect")
+    g2.selectAll("rect")
     .data(color.range().map(function(d) {
       d = color.invertExtent(d);
       if (d[0] == null) d[0] = x.domain()[0];
@@ -274,7 +269,7 @@
     .attr("width", function(d) { return x(d[1]) - x(d[0]); })
     .attr("fill", function(d) { return color(d[0]); });
 
-    g.append("text")
+    g2.append("text")
     .attr("class", "caption")
     .attr("x", x.range()[0])
     .attr("y", -6)
@@ -282,11 +277,11 @@
     .attr("text-anchor", "start")
     .attr("font-weight", "bold")
     .attr("font-size", 12)
-    .text("Casas por município");
+    .text("Relação de ocorrência por meninos alfabetizados");
 
-    g.call(d3.axisBottom(x)
+    g2.call(d3.axisBottom(x)
       .tickSize(13)
-      .tickFormat(function(x, i) { return i ? x : x; })
+      .tickFormat(function(x, i) { return x + "%"; })
       .tickValues(color.domain()))
     .select(".domain")
     .remove();
