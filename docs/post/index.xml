@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Visualização da Informação</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 2017</copyright>
-    <lastBuildDate>Thu, 15 Feb 2018 17:17:10 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 21 Feb 2018 17:20:10 -0300</lastBuildDate>
     
 	<atom:link href="https://veruskasantos.github.io/VisualizacaoDaInformacao/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Educação na Paraíba</title>
+      <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-interativo-paraiba/</link>
+      <pubDate>Wed, 21 Feb 2018 17:20:10 -0300</pubDate>
+      
+      <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-interativo-paraiba/</guid>
+      <description>Segundo os dados do QEDU, aproximadamente menos da metade dos municípios paraibanos possuem taxa de aprendizado adequado (superior a 40%), e menos ainda são os municípios que apresentam crescimento na qualidade da educação.  Observe os mapas abaixo sobre aprendizado adequado nos municípios da Paraíba e o crescimento, respectivamente.  [VOU COLOCAR PRIMEIRO MAPA AMANHA NO LAB]   .cidades { fill: none; stroke: #fff; stroke-linejoin: round; } path:hover, path.</description>
+    </item>
     
     <item>
       <title>Na Paraíba, a responsabilidade feminina chega primeiro</title>
