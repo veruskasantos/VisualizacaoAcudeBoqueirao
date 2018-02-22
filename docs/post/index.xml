@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Visualização da Informação</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 2017</copyright>
-    <lastBuildDate>Wed, 21 Feb 2018 17:20:10 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 22 Feb 2018 17:20:10 -0300</lastBuildDate>
     
 	<atom:link href="https://veruskasantos.github.io/VisualizacaoDaInformacao/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Brasil</title>
+      <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-docentes-brasil/</link>
+      <pubDate>Thu, 22 Feb 2018 17:20:10 -0300</pubDate>
+      
+      <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-docentes-brasil/</guid>
+      <description>.cidades { fill: none; stroke-linejoin: round; } path:hover, path.highlighted { fill: tomato; } div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&#34;avenir next&#34;, Arial, sans-serif; padding: 4px 8px; display: none; }    const svg = d3.select(&#34;#mapaBrasil&#34;) .style(&#34;width&#34;, &#34;100%&#34;) .style(&#34;height&#34;, &#34;auto&#34;); var path = d3.geoPath(); // a escala de cores var color = d3.scaleThreshold() .domain([10, 100, 1000, 10000, 125000]) .</description>
+    </item>
     
     <item>
       <title>Educação na Paraíba</title>
