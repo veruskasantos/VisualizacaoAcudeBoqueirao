@@ -152,10 +152,10 @@
 <head>
   <meta charset="utf-8">
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/topojson.v2.min.js"></script>
-<script src="/VisualizacaoDaInformacao/dados/legenda-d3-cor.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+  <script src="/VisualizacaoDaInformacao/dados/legenda-d3-cor.js"></script>
 </head>
 
 <body>
@@ -167,13 +167,10 @@
   <p> 
     Observe os mapas abaixo sobre aprendizado adequado nos municípios da Paraíba e o crescimento, respectivamente. 
   </p>
-  <p>
-    [VOU COLOCAR PRIMEIRO MAPA AMANHA NO LAB]
-  </p>
 
-<svg width="1000" height="600" id="mapaAprendizado"></svg>
+  <svg width="1000" height="600" id="mapaAprendizado"></svg>
 
-<style>
+  <style>
 
   .cidades {
     fill: none;
@@ -196,27 +193,21 @@
   }
 
 </style>
-  <script>
 
-  </script>
+<script>
+  const svg = d3.select("#mapaAprendizado")
+  .style("width", "100%")
+  .style("height", "auto");
 
-  <svg width="1000" height="600" id="mapaCrescimento"></svg>
-
-  <script>
-
-    const svg = d3.select("#mapaCrescimento")
-    .style("width", "100%")
-    .style("height", "auto");
-
-    var path = d3.geoPath();
+  var path = d3.geoPath();
 
 // a escala de cores
 var color = d3.scaleThreshold()
-.domain([-30,-20, -10, 0, 10, 20, 30, 40, 53])
-.range(d3.schemePiYG[9]);
+.domain(d3.range(20, 81, 20))
+.range(d3.schemeOrRd[4]);
 
 // função aux definida em legenda-d3-cor.js
-desenhaLegenda(-30, 53, color, "Crescimento")
+desenhaLegenda(0, 81, color, "Aprendizado adequado (%)", svg)
 
 d3.queue()
 .defer(d3.json, "/VisualizacaoDaInformacao/dados/geo4-municipios-e-aprendizado-simplificado.json")
@@ -233,8 +224,48 @@ function ready(error, dados) {
   .data(cidades)
   .enter()
   .append("path")
-  .attr("fill", d => {valor = d.properties["Crescimento"]; return valor === "NA" ? '#e0e0eb' : color(valor)})
+  .attr("fill", d => {let valor = d.properties["Percentual Aprendizado Adequado (%)"]; return valor === "NA" ? '#e0e0eb' : color(valor)})
   .attr("d", path)
+  .append("title")
+  .text(d => d.properties.Cidade + ": " + d.properties["Percentual Aprendizado Adequado (%)"]);
+}
+</script>
+
+<svg width="1000" height="600" id="mapaCrescimento"></svg>
+
+<script>
+
+  const svg2 = d3.select("#mapaCrescimento")
+  .style("width", "100%")
+  .style("height", "auto");
+
+  var path2 = d3.geoPath();
+
+// a escala de cores
+var color2 = d3.scaleThreshold()
+.domain([-30,-20, -10, 0, 10, 20, 30, 40, 53])
+.range(d3.schemePiYG[9]);
+
+// função aux definida em legenda-d3-cor.js
+desenhaLegenda(-30, 53, color2, "Crescimento", svg2)
+
+d3.queue()
+.defer(d3.json, "/VisualizacaoDaInformacao/dados/geo4-municipios-e-crescimento-simplificado.json")
+.await(ready);
+
+function ready(error, dados) {
+  if (error) throw error;
+
+  var cidades = dados.features;
+
+  svg2.append("g")
+  .attr("class", "cidades")
+  .selectAll("path")
+  .data(cidades)
+  .enter()
+  .append("path")
+  .attr("fill", d => {valor = d.properties["Crescimento"]; return valor === "NA" ? '#e0e0eb' : color2(valor)})
+  .attr("d", path2)
   .on("mouseover",showTooltip)
   .on("mousemove",moveTooltip)
   .on("mouseout",hideTooltip)
@@ -253,8 +284,7 @@ function zoom_actions(){
 
 //add zoom behaviour to the svg element
 //same as svg.call(zoom_handler);
-zoom_handler(svg);
-
+zoom_handler(svg2);
 
 // TOOLTIP
 
@@ -291,10 +321,8 @@ function hideTooltip() {
   Os municípios com baixa qualidade de ensino não apresentam perspectiva de evolução, segundo os dados sobre o crescimento na educação dos mesmos, como é o exemplo do litoral paraibano, que não apresenta os melhores resultados para o aprendizado adequado nem o crescimento.
 </p>
 
-
 </body>
 </html>
-
                 </div>
             
                 <div class="top-nav">
