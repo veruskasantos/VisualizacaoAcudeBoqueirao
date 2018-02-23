@@ -158,6 +158,18 @@
 </head>
 
 <body>
+
+	<p>
+		Analisando o mapa do Brasil, logo abaixo, percebemos uma diversidade de municípios, em sua maioria pequenos. A Região Norte destaca-se por ser um contra-exemplo e os municípios caracterizarem-se territorialmente mais extensos.
+	</p>
+	<p> 
+		Há 1570 municípios no Brasil e, segundo os dados sobre os <a href="http://www.observatoriodopne.org.br/downloads">Docentes da Educação Básica</a> do Observatório do Plano Nacional da Educação, a maior parte dos municípios brasileiros possuem entre 100 e 500 docentes (professores) na rede de ensino. Porém, quase a outra metade possui menos de 100 docentes, correspondendo, em geral, aos menores municípios, que estão destacados com o verde mais claro no mapa logo abaixo. (Dê zoom no mapa para encontrar a sua cidade.)
+	</p>
+	<p>
+		Os municípios com a cor mais escura, no mapa, são aqueles que possuem mais de 500 docentes na rede de ensino, que estão concentrados na Região Norte e se explicam por sua expansão territorial. Navegue pelo mapa abaixo e veja a quantidade exata de docentes em cada município.
+
+	</p>
+
 	<style>
 
 	.cidades {
@@ -193,11 +205,11 @@
 
 // a escala de cores
 var color = d3.scaleThreshold()
-.domain([10, 100, 1000, 10000, 125000])
-.range(d3.schemeBuGn[5]);
+.domain([10, 100, 500, 1000])
+.range(d3.schemeBuGn[4]);
 
 // função aux definida em legenda-d3-cor.js
-desenhaLegenda(10, 125000, color, "Docentes na Educação Brasileira", svg)
+desenhaLegenda(10, 1000, color, "Docentes na Educação Brasileira", svg)
 
 d3.queue()
 .defer(d3.json, "/VisualizacaoDaInformacao/dados/geo4-municipios-e-docentes-simplificado.json")

@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Brasil</title>
+      <title>Quantidade de docentes na rede de ensino por município brasileiro</title>
       <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-docentes-brasil/</link>
       <pubDate>Thu, 22 Feb 2018 17:20:10 -0300</pubDate>
       
       <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/mapa-docentes-brasil/</guid>
-      <description>.cidades { fill: none; stroke-linejoin: round; } path:hover, path.highlighted { fill: tomato; } div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&#34;avenir next&#34;, Arial, sans-serif; padding: 4px 8px; display: none; }    const svg = d3.select(&#34;#mapaBrasil&#34;) .style(&#34;width&#34;, &#34;100%&#34;) .style(&#34;height&#34;, &#34;auto&#34;); var path = d3.geoPath(); // a escala de cores var color = d3.scaleThreshold() .domain([10, 100, 1000, 10000, 125000]) .</description>
+      <description>Analisando o mapa do Brasil, logo abaixo, percebemos uma diversidade de municípios, em sua maioria pequenos. A Região Norte destaca-se por ser um contra-exemplo e os municípios caracterizarem-se territorialmente mais extensos.  Há 1570 municípios no Brasil e, segundo os dados sobre os Docentes da Educação Básica do Observatório do Plano Nacional da Educação, a maior parte dos municípios brasileiros possuem entre 100 e 500 docentes (professores) na rede de ensino.</description>
     </item>
     
     <item>
