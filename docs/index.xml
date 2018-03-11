@@ -6,10 +6,19 @@
     <description>Recent content on Visualização da Informação</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright (c) 2017</copyright>
-    <lastBuildDate>Thu, 22 Feb 2018 17:20:10 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 10 Mar 2018 19:17:10 -0300</lastBuildDate>
     
 	<atom:link href="https://veruskasantos.github.io/VisualizacaoDaInformacao/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Veja quais artistas são semelhantes a Dorgival Dantas, segundo o Spotify</title>
+      <link>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/grafo-musica/</link>
+      <pubDate>Sat, 10 Mar 2018 19:17:10 -0300</pubDate>
+      
+      <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/post/grafo-musica/</guid>
+      <description>O grafo abaixo exibe alguns artistas da música brasileira, extraídos do Spotify.  Em destaque, temos Dorgival Dantas e linkados a ele os seus semelhantes direto. Segundo o tamanho do círculo, Dorgival Dantas tem certa popularidade, porém ele possui mais similaridade com artistas que não são tão populares no Brasil, como Geraldinho Lins. É possível perceber também que eles não estão agrupados em uma comunidade específica, devido a distância espacial.</description>
+    </item>
     
     <item>
       <title>Quantidade de docentes na rede de ensino por município brasileiro</title>
@@ -36,8 +45,7 @@
       
       <guid>https://veruskasantos.github.io/VisualizacaoDaInformacao/about/</guid>
       <description>Análises sobre:
- o volume do Açude Epitácio Pessoa (Boqueirão), com os dados disponibilizados pelo Instituto Nacional do Semiárido - INSA. a movimentação de pessoas no Açude Velho, com os dados disponibilizados pelo LabRua. a população da Paraíba, com os dados adquiridos pelo Censo do IBGE em 2010.  Disciplina Visualização da Informação - 2017.2
-Curso de Ciência da Computação - UFCG</description>
+ o volume do Açude Epitácio Pessoa (Boqueirão), com os dados disponibilizados pelo Instituto Nacional do Semiárido - INSA. a movimentação de pessoas no Açude Velho, com os dados disponibilizados pelo LabRua. a população da Paraíba, com os dados adquiridos pelo Censo do IBGE em 2010. os docentes da educação básica no Brasil, com os dados do Observatório do Plano Nacional da Educação. artistas brasileiros, através da API do Spotify.</description>
     </item>
     
     <item>

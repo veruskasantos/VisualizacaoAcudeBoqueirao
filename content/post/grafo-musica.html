@@ -1,0 +1,147 @@
+---
+title: "Veja quais artistas são semelhantes a Dorgival Dantas, segundo o Spotify"
+date: 2018-03-10T19:17:10-03:00
+draft: false
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="container">
+
+		<p>
+			O grafo abaixo exibe alguns artistas da música brasileira, extraídos do <a href="http://labs.polsys.net/playground/spotify/s">Spotify</a>. 
+		</p>
+
+		<p>
+			Em destaque, temos Dorgival Dantas e linkados a ele os seus semelhantes direto.
+			Segundo o tamanho do círculo, Dorgival Dantas tem certa popularidade, porém ele possui mais similaridade com artistas que não são tão populares no Brasil, como Geraldinho Lins. É possível perceber também que eles não estão agrupados em uma comunidade específica, devido a distância espacial. Navegue pelos nós e descubra mais sobre o agrupamento dos artistas brasileiros.
+		</p>
+
+		<div id="chart"></div>
+
+	</div>
+
+	<footer></footer>
+
+	<style>
+	.node {
+		fill: #ccc;
+		stroke: #fff;
+		stroke-width: 2px;
+	}
+
+	.link {
+		stroke: #999;
+		stroke-opacity: 0.3;
+	}
+</style>
+
+<!-- scripts -->
+<script src="/VisualizacaoDaInformacao/dados/d3.v4.min.js"></script>
+<script>
+	var
+	width = 1000,
+	height = 1000;
+
+	var svg = d3.select("#chart")
+	.append("svg")
+	.attr('version', '1.1')
+	.attr('viewBox', '0 0 '+width+' '+height)
+	.attr('width', '100%');
+
+
+	var simulation = d3.forceSimulation()
+	.force("link", d3.forceLink().id(function(d) { return d.id; }))
+	.force("charge", d3.forceManyBody())
+	.force("center", d3.forceCenter(width / 2, height / 2));
+
+	d3.json("/VisualizacaoDaInformacao/dados/dorgivaldantas.json", function(error, graph) {
+		if (error) throw error;
+
+			var edges = graph.edges.filter(d => d.id.includes("3J4WurF5XyCy2ToWeCof5Y"))
+			var nodes = graph.nodes
+			
+			const minValue = d3.min(graph.nodes,  function(d) { return d.size; });
+			const maxValue = d3.max(graph.nodes,  function(d) { return d.size; });
+
+			var color = d3.scaleThreshold().domain([minValue, (maxValue*0.25), (maxValue*0.50), (maxValue*0.75), maxValue]).range(["#ACE1AF", "#77DD77", "#03C03C", "#138808"]);
+
+			var link = svg.append("g")
+			.attr("class", "link")
+			.selectAll("line")
+			.data(edges)
+			.enter().append("line");
+
+			var node = svg.append("g")
+			.attr("class", "nodes")
+			.selectAll("circle")
+			.data(nodes)
+			.enter().append("circle")
+			.attr("r", function(d) { return d.size/5; })
+			.attr("fill", function(d) { 
+				if (d.id == "3J4WurF5XyCy2ToWeCof5Y") {
+					return "red";
+				} else {
+					return color(d.size);
+				} })
+			.call(d3.drag()
+				.on("start", dragstarted)
+				.on("drag", dragged)
+				.on("end", dragended));
+
+			node.append("title")
+			.text(function(d) { return d.label; });
+
+			simulation
+			.nodes(graph.nodes)
+			.on("tick", ticked);
+
+			simulation.force("link")
+			.links(graph.edges);
+
+			function ticked() {
+				link
+				.attr("x1", function(d) { return d.source.x; })
+				.attr("y1", function(d) { return d.source.y; })
+				.attr("x2", function(d) { return d.target.x; })
+				.attr("y2", function(d) { return d.target.y; });
+
+				node
+				.attr("cx", function(d) { return d.x; })
+				.attr("cy", function(d) { return d.y; });
+			}
+		});
+
+	function dragstarted(d) {
+		if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+		d.fx = d.x;
+		d.fy = d.y;
+	}
+
+	function dragged(d) {
+		d.fx = d3.event.x;
+		d.fy = d3.event.y;
+	}
+
+	function dragended(d) {
+		if (!d3.event.active) simulation.alphaTarget(0);
+		d.fx = null;
+		d.fy = null;
+	}
+
+</script>
+
+</body>
+</html>
