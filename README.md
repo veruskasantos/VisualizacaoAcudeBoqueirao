@@ -1,6 +1,6 @@
 # Portfólio de análise de dados
 
-Análises sobre dados públicos na Paraíba
+Analisando dados públicos através de visualizações feitas em JavaScript.
 
 - Disciplina Visualização da Informação - 2017.2
 - Prof. Nazareno Andrade
